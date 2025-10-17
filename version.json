@@ -1,0 +1,4 @@
+{
+  "version": "0.9.1.0",
+  "feature": "- Improved process polling stability\n- New: Minimize-to-tray option\n- Fix: Titlebar drag behavior over icon/text"
+}
