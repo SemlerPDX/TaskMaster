@@ -1,0 +1,146 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.   
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Shared Design Tokens (not theme-specific) -->
+
+    <!-- UI Control -->
+    <CornerRadius x:Key="CornerRadius.CurrentStyle">8</CornerRadius>
+    
+    <sys:Int32 x:Key="Time.ToolTip.InitialDelay">7500</sys:Int32>
+    <sys:Int32 x:Key="Time.ToolTip.Duration">15000</sys:Int32>
+    
+    <!-- Base Font -->
+    <FontFamily x:Key="Font.Family.Primary">Segoe UI</FontFamily>
+    
+    <sys:Double x:Key="Font.Size">14</sys:Double>
+    <sys:Double x:Key="Font.Size.Small">12</sys:Double>
+    <sys:Double x:Key="Font.Size.Large">16</sys:Double>
+    <sys:Double x:Key="Font.Size.Header">18</sys:Double>
+    <sys:Double x:Key="Font.Size.Title">22</sys:Double>
+
+    <!-- Sizing -->
+    <sys:Double x:Key="Window.BaseWidth">840</sys:Double>
+    <sys:Double x:Key="Window.BaseHeight">560</sys:Double>
+    <sys:Double x:Key="Window.BaseHeight.Content">474</sys:Double>
+    <sys:Double x:Key="Window.BaseWidth.Overlay">710</sys:Double>
+    <sys:Double x:Key="Window.BaseHeight.Overlay">560</sys:Double>
+    <sys:Double x:Key="Window.BaseWidth.Dialog">420</sys:Double>
+    <sys:Double x:Key="Window.BaseWidth.Dialog.Help">460</sys:Double>
+    <sys:Double x:Key="Window.BaseHeight.Dialog.Help">560</sys:Double>
+    <sys:Double x:Key="Window.BaseWidth.Dialog.Support">655</sys:Double>
+    <sys:Double x:Key="Window.BaseHeight.Dialog.Support">480</sys:Double>
+
+    <!-- Tooltips -->
+    <sys:Double x:Key="Size.ToolTip.MaxWidth">380</sys:Double>
+    
+    <!-- Overlay Panel -->
+    <sys:Double x:Key="Size.LauncherDialog.Width">714</sys:Double>
+
+    <!-- Icons -->
+    <sys:Double x:Key="Size.Icon.Width">32</sys:Double>
+    <sys:Double x:Key="Size.Icon.Height">32</sys:Double>
+
+    <!-- Images -->
+    <sys:Double x:Key="Size.Image.MinHeight">8</sys:Double>
+    <sys:Double x:Key="Size.Image.MinHeight.Flag">22</sys:Double>
+    <sys:Double x:Key="Size.Image.MaxHeight">256</sys:Double>
+    <sys:Double x:Key="Size.Image.Width">64</sys:Double>
+    <sys:Double x:Key="Size.Image.Width.Small">48</sys:Double>
+    <sys:Double x:Key="Size.Image.MinWidth">8</sys:Double>
+
+    <!-- Image Buttons -->
+    <sys:Double x:Key="Size.Image.Button.Width">201</sys:Double>
+    <sys:Double x:Key="Size.Image.Button.MinWidth">48</sys:Double>
+    <sys:Double x:Key="Size.Image.Button.MaxWidth">364</sys:Double>
+    <sys:Double x:Key="Size.Image.Button.Height">33</sys:Double>
+    <sys:Double x:Key="Size.Image.Button.MinHeight">69</sys:Double>
+    <sys:Double x:Key="Size.Image.Button.MaxHeight">96</sys:Double>
+
+    <!-- Tabs / Lists / Stacks (grid rows) -->
+    <GridLength x:Key="Grid.TitleBar.Height">42</GridLength>
+    <GridLength x:Key="Grid.TabStrip.Height">44</GridLength>
+    <GridLength x:Key="Grid.ListRegion.Width">322</GridLength>
+    <GridLength x:Key="Grid.ListRegion.Height">220</GridLength>
+    <GridLength x:Key="Grid.ListRegion.Height.Aux">160</GridLength>
+    <GridLength x:Key="Grid.History.Height">139</GridLength>
+    <GridLength x:Key="Grid.ButtonStack.Width">140</GridLength>
+    <GridLength x:Key="Grid.ButtonStack.Width.Aux">170</GridLength>
+    <GridLength x:Key="Grid.ButtonStack.Width.Spacer">36</GridLength>
+    <GridLength x:Key="Grid.ComboBox.Width.Spacer">24</GridLength>
+    <GridLength x:Key="Grid.InputSettings.Width.Spacer">10</GridLength>
+    <GridLength x:Key="Grid.DialogRow.Height.Spacer">16</GridLength>
+    <GridLength x:Key="Grid.DialogColumn.Width">360</GridLength>
+    <GridLength x:Key="Grid.Image.Width.Small">48</GridLength>
+
+
+    <!-- Tabs / Lists (controls) -->
+    <sys:Double x:Key="Size.TitleBar.Height">42</sys:Double>
+    <sys:Double x:Key="Size.TabStrip.Height">44</sys:Double>
+    <sys:Double x:Key="Size.TabItem.MinWidth">120</sys:Double>
+    <sys:Double x:Key="Size.ListRegion.Height">220</sys:Double>
+    <sys:Double x:Key="Size.ListRegion.Height.Aux">160</sys:Double>
+    
+    <!-- TextBoxes -->
+    <sys:Double x:Key="Size.TextBox.Height">28</sys:Double>
+    <sys:Double x:Key="Size.TextBox.Width">275</sys:Double>
+    <sys:Double x:Key="Size.TextBox.Width.Tiny">45</sys:Double>
+    <sys:Double x:Key="Size.TextBox.Width.Small">65</sys:Double>
+    <sys:Double x:Key="Size.TextBox.Width.Wide">638</sys:Double>
+    <sys:Double x:Key="Size.TextBox.Width.Full">680</sys:Double>
+
+    <!-- TextBlocks -->
+    <sys:Double x:Key="Size.TextBlock.Width.Help">600</sys:Double>
+    
+    <!-- StackPanels -->
+    <sys:Double x:Key="Size.StackPanel.Width.Support">510</sys:Double>
+
+    <!-- ListBoxes -->
+    <sys:Double x:Key="Size.ListBox.MaxWidth">324</sys:Double>
+    <sys:Double x:Key="Size.ListBox.MaxWidth.History">840</sys:Double>
+    <sys:Double x:Key="Size.ListBox.MaxWidth.License">616</sys:Double>
+    <sys:Double x:Key="Size.ListBox.MaxWidth.License.Mini">470</sys:Double>
+    <sys:Double x:Key="Size.ListBox.MaxHeight.History">139</sys:Double>
+    <sys:Double x:Key="Size.ListBox.MaxHeight.License">420</sys:Double>
+    <sys:Double x:Key="Size.ListBox.MaxHeight.License.Mini">256</sys:Double>
+    <sys:Double x:Key="Size.ListBox.MaxHeight.Aux">324</sys:Double>
+
+    <!-- ComboBoxes -->
+    <sys:Double x:Key="Size.ComboBox.Width.Selector">34</sys:Double>
+    <sys:Double x:Key="Size.ComboBox.MinWidth">74</sys:Double>
+    <sys:Double x:Key="Size.ComboBox.MinHeight">30</sys:Double>
+    <sys:Double x:Key="Size.Popup.MinWidth">74</sys:Double>
+    <sys:Double x:Key="Size.Popup.MinHeight">30</sys:Double>
+    <sys:Double x:Key="Size.Popup.MaxHeight">250</sys:Double>
+
+    <!-- ComboBoxes Selector Chevron -->
+    <sys:Double x:Key="Size.Path.StrokeThickness">2.8</sys:Double>
+
+    <!-- Buttons -->
+    <sys:Double x:Key="Size.Button.Height">30</sys:Double>
+    <sys:Double x:Key="Size.Button.Height.Short">22</sys:Double>
+    <sys:Double x:Key="Size.Button.Width.Square">30</sys:Double>
+    <sys:Double x:Key="Size.Button.Width.Fat">36</sys:Double>
+    <sys:Double x:Key="Size.Button.Width.Thin">44</sys:Double>
+    <sys:Double x:Key="Size.Button.Width.Medium">50</sys:Double>
+    <sys:Double x:Key="Size.Button.Width.Large">74</sys:Double>
+    <sys:Double x:Key="Size.Button.Width.Narrow">96</sys:Double>
+    <sys:Double x:Key="Size.Button.Width.Wide">160</sys:Double>
+</ResourceDictionary>

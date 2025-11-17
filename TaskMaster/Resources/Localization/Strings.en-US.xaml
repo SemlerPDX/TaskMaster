@@ -1,0 +1,435 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Localization Strings (en-US) -->
+    
+    <!-- - App-level - -->
+    <sys:String x:Key="Text.App.Title">TaskMaster</sys:String>
+    <sys:String x:Key="Text.App.Author">Aaron Semler</sys:String>
+    <sys:String x:Key="Text.App.Author.Avatar">SemlerPDX</sys:String>
+    <sys:String x:Key="Text.App.Author.Alias">(aka SemlerPDX)</sys:String>
+    <sys:String x:Key="Text.App.CopyrightPrefix">Copyright ©</sys:String>
+
+    <!-- App Startup Update Checks - Tray Notification Messages -->
+    <sys:String x:Key="Message.App.History.UpdateFound">TaskMaster Update has been found! v{0} is now available. Visit TaskMaster on GitHub for details.</sys:String>
+    <sys:String x:Key="Message.App.History.UpdateNotFound">No update found on startup. TaskMaster v{0} is the latest version.</sys:String>
+    <sys:String x:Key="Message.App.History.UpdateError">Error occurred in update check. If this issue persists, please report bug.</sys:String>
+
+    <!-- App Startup Update Checks - History Log Messages -->
+    <sys:String x:Key="Title.App.Tray.UpdateFound">Update Found!</sys:String>
+    <sys:String x:Key="Message.App.Tray.UpdateFound">Version {0} of TaskMaster is now available. Visit TaskMaster on GitHub for details.</sys:String>
+
+    <!-- Tabs -->
+    <sys:String x:Key="Text.Tab.Launcher">Task Launcher</sys:String>
+    <sys:String x:Key="Text.Tab.Killer">Task Killer</sys:String>
+    <sys:String x:Key="Text.Tab.Settings">Settings</sys:String>
+
+
+
+    <!-- - Common - -->
+    <!-- Buttons -->
+    <sys:String x:Key="Text.Button.Add">Add</sys:String>
+    <sys:String x:Key="Text.Button.Edit">Edit</sys:String>
+    <sys:String x:Key="Text.Button.Browse">Browse</sys:String>
+    <sys:String x:Key="Text.Button.Remove">Remove</sys:String>
+
+    <sys:String x:Key="Text.Button.Save">Save</sys:String>
+    <sys:String x:Key="Text.Button.Undo">Undo</sys:String>
+    <sys:String x:Key="Text.Button.Clear">Clear</sys:String>
+    <sys:String x:Key="ToolTip.Button.Clear">Clear History Log</sys:String>
+    <sys:String x:Key="Text.Button.Cancel">Cancel</sys:String>
+    <sys:String x:Key="Text.Button.Close">Close</sys:String>
+
+    <sys:String x:Key="Text.Button.OK">OK</sys:String>
+    <sys:String x:Key="Text.Button.Yes">Yes</sys:String>
+    <sys:String x:Key="Text.Button.No">No</sys:String>
+
+    <sys:String x:Key="ToolTip.Button.Close">Close</sys:String>
+    <sys:String x:Key="ToolTip.Button.Minimize">Minimize</sys:String>
+    <sys:String x:Key="ToolTip.Button.Help">TaskMaster Help and Support</sys:String>
+
+    <!-- Messages -->
+    <sys:String x:Key="Message.App.History.LinkFailed">Failed to open link from app dialog.</sys:String>
+
+    <!-- Labels -->
+    <sys:String x:Key="Text.Unit.Seconds">Second(s)</sys:String>
+    <sys:String x:Key="Text.Unit.Attempts">Attempt(s)</sys:String>
+    <sys:String x:Key="Text.Unit.Entries">Entries</sys:String>
+
+    <sys:String x:Key="Text.RunningProcesses">Currently Running Processes</sys:String>
+    <sys:String x:Key="Title.BrowseFile">Select Application</sys:String>
+
+    <!-- Listbox Tooltips -->
+    <sys:String x:Key="ToolTip.App.ListBox.SavedTask">Select a saved task to Move, Edit, or Remove</sys:String>
+    <sys:String x:Key="ToolTip.App.ListBox.RunningProcess">Select a task and press Add to save in the left listbox</sys:String>
+
+    <!-- - Jumplist - -->
+    <sys:String x:Key="JumpList.RelocateTask.Title">Relocate to Primary Display</sys:String>
+    <sys:String x:Key="JumpList.RelocateTask.Description">Restore TaskMaster and center it on the primary display.</sys:String>
+    <sys:String x:Key="JumpList.TaskSchedulerTask.Title">Windows Task Scheduler</sys:String>
+    <sys:String x:Key="JumpList.TaskSchedulerTask.Description">Open Windows Task Scheduler.</sys:String>
+
+    
+    <!-- - Task Launcher Tab - -->
+    <!-- Messages -->
+    <sys:String x:Key="Title.LauncherTab.Dialog.Changed">Task Launcher List Changed</sys:String>
+    <sys:String x:Key="Message.LauncherTab.Dialog.Changed">You have changed the Task Launcher list but have not saved changes.\n\n
+		\nDo you want to save changes now?
+    </sys:String>
+
+    <sys:String x:Key="Message.LauncherTab.History.Saved">Task Launcher list saved.</sys:String>
+    <sys:String x:Key="Message.LauncherTab.History.Canceled">Task Launcher list changes canceled.</sys:String>
+    <sys:String x:Key="Message.LauncherTab.History.Unable">Cannot add '{0}' to Task Launcher list - entry already exists.</sys:String>
+    <sys:String x:Key="Message.LauncherTab.History.PathError">Cannot add '{0}' - path cannot be resolved. Use BROWSE to locate and set manually.</sys:String>
+
+    <!-- Task Launcher Feature Messages -->
+    <sys:String x:Key="Message.LauncherTab.History.Missing">Missing '{0}'. Will launch in {1}s if still not running.</sys:String>
+
+    <sys:String x:Key="Message.LauncherTab.History.Launched">Launched: {0}</sys:String>
+    <sys:String x:Key="Title.TaskLauncher.Tray.Launched">Task Launched</sys:String>
+    <sys:String x:Key="Message.TaskLauncher.Tray.Launched">Task Launcher has launched '{0}'</sys:String>
+
+    <sys:String x:Key="Message.LauncherTab.History.Failed">Launch failed: {0} (attempt {1}).</sys:String>
+    <sys:String x:Key="Title.TaskLauncher.Tray.Failed">Task Launch Failure</sys:String>
+    <sys:String x:Key="Message.TaskLauncher.Tray.Failed">Task Launcher has failed to launch '{0}' (attempt {1})</sys:String>
+
+    <sys:String x:Key="Message.LauncherTab.History.Disabled">Disabled for this session after {0} failed attempts: {1}.</sys:String>
+    <sys:String x:Key="Title.TaskLauncher.Tray.Disabled">Task Launch Disabled</sys:String>
+    <sys:String x:Key="Message.TaskLauncher.Tray.Disabled">Task Launcher has disabled auto-launching '{0}' for this session after {1} failed launch attempts</sys:String>
+
+    <!-- Labels/TextBlocks -->
+    <sys:String x:Key="Text.LauncherTab.SavedItems">Re-Launch Apps if Closed or Crashed</sys:String>
+    <sys:String x:Key="Text.LauncherTab.History">Task Launcher History</sys:String>
+
+
+
+    <!-- - Task Launcher Add/Edit Dialog - -->
+    <!-- Messages -->
+    <sys:String x:Key="Message.LauncherDialog.History.Saved">Task Launcher entry saved.</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.History.Canceled">Task Launcher entry changes canceled.</sys:String>
+
+    <sys:String x:Key="Title.LauncherDialog.Dialog.Unable">Process Already Exists</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.Dialog.Unable">Cannot add '{0}'\n
+        \nThis entry already exists in another Task Launcher or Task Killer entry.
+    </sys:String>
+
+    <sys:String x:Key="Title.LauncherDialog.Dialog.PathError">Path Not Found</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.Dialog.PathError">Cannot add '{0}' - path cannot be resolved. Use BROWSE to locate and set manually.</sys:String>
+
+    <sys:String x:Key="Title.LauncherDialog.Dialog.UnsavedDuplicate">Duplicate Unsaved Entry</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.Dialog.UnsavedDuplicate">'{0}' is already in the Aux Apps list. Unable to add this process twice.</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.Dialog.UnsavedDuplicate.TargetApp">'{0}' is already set but not saved as the Target Application. Unable to add this process twice.</sys:String>
+
+    <!-- Labels/TextBlocks -->
+    <sys:String x:Key="Text.LauncherDialog.CheckBox.Enabled">Target App Launcher</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.CheckBox.Enabled">Enable launching Target Application if closed or crashed.</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.CheckBox.Detector">Target App Detector</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.CheckBox.Detector">Enable detection of Target Application. Will launch (only) Aux App(s) if Target is detected running.</sys:String>
+
+    <sys:String x:Key="Text.LauncherDialog.CheckBox.EnabledAux">Aux Apps Launcher</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.CheckBox.EnabledAux">Enable/Disable launching Aux App(s) when Target App is Launched or Detected</sys:String>
+
+    <sys:String x:Key="Text.LauncherDialog.Target.Name">Target Application Name</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.Target.Path">Target Application Path</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.Target.Args">Target Application Launch Parameters (optional)</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.Target.Args">Arguments accepted by the Target Application OR a task to launch instead of the Target Application Path above. EXAMPLE: -schtasks "MyTaskName"</sys:String>
+
+    <sys:String x:Key="Text.LauncherDialog.Aux.SavedItems">Launch Aux App(s) if Target Launched/Detected</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.Aux.Path">Selected Aux Application Path</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.Aux.Args">Selected Aux Application Launch Parameters (optional)</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.Aux.Args">Arguments accepted by the selected Aux App Application OR a task to launch instead of the selected Aux App Path above. EXAMPLE: -schtasks "MyTaskName"</sys:String>
+
+
+
+    <!-- - Task Killer Tab - -->
+    <!-- Messages -->
+    <sys:String x:Key="Title.KillerTab.Dialog.Changed">Task Killer List Changed</sys:String>
+    <sys:String x:Key="Message.KillerTab.Dialog.Changed">You have changed the Task Killer list but have not saved changes.\n\n
+        \nDo you want to save changes now?
+    </sys:String>
+
+    <sys:String x:Key="Message.KillerTab.History.Saved">Task Killer list saved.</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.Canceled">Task Killer list changes canceled.</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.Unable">Cannot add '{0}' to Task Killer list - entry already exists.</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.UnsavedDuplicate">'{0}' is already in the Task Killer list. Press Save to apply.</sys:String>
+
+    <!-- Task Killer Feature Messages -->
+    <sys:String x:Key="Message.KillerTab.History.Detected">Detected '{0}'. Will kill in {1}s if still running.</sys:String>
+
+    <sys:String x:Key="Message.KillerTab.History.Killed">Killed '{0}' ({1} instance{2}).</sys:String>
+    <sys:String x:Key="Title.TaskKiller.Tray.Killed">Task Killed</sys:String>
+    <sys:String x:Key="Message.TaskKiller.Tray.Killed">Task Killer has killed '{0}'</sys:String>
+
+    <sys:String x:Key="Message.KillerTab.History.Denied">Access denied killing process '{0}'</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.AsAdmin">Try enabling Launch as Administrator in the Settings Tab or exclude this process.</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.Failed">Failed to kill process '{0}'</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.FailedNote">This process may have already exited. See TaskMaster log file for details.</sys:String>
+
+    <sys:String x:Key="Message.KillerTab.History.Disabled">Disabled for this session after {0} failed attempts: {1}.</sys:String>
+    <sys:String x:Key="Title.TaskKiller.Tray.Disabled">Task Kill Disabled</sys:String>
+    <sys:String x:Key="Message.TaskKiller.Tray.Disabled">Task Killer has disabled auto-killing '{0}' for this session after {1} failed kill attempts</sys:String>
+
+    <!-- Labels/TextBlocks -->
+    <sys:String x:Key="Text.KillerTab.SavedItems">Kill Apps if Launched</sys:String>
+    <sys:String x:Key="Text.KillerTab.History">Task Killer History</sys:String>
+
+
+
+    <!-- - Settings Tab - -->
+    <!-- Messages -->
+    <sys:String x:Key="Title.SettingsTab.Dialog.Changed">Settings Changed</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.Changed">You have changed settings but have not saved them.\n\n
+        \nDo you want to save them now?
+    </sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.Restore">Restore Defaults</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.Restore">This will restore all settings to defaults, but all saved launcher and killer apps will remain.\n
+        \nAre you sure you want to restore default settings?
+    </sys:String>
+    <sys:String x:Key="Message.SettingsTab.History.Restored">Default settings have been restored.</sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.Uninstall">Uninstall Application</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.Uninstall">This will delete all saved launcher and killer apps, including the save folder, and remove all application settings.\n
+        \nWhen complete, TaskMaster will close, and you can reopen it to start fresh, or manually delete the application folder to have effectively uninstalled TaskMaster and all its files.\n
+        \nAre you sure you want to uninstall TaskMaster?
+    </sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.Uninstalled">TaskMaster Uninstall Complete</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.Uninstalled">TaskMaster will now close. You can delete the folder containing this application to uninstall, or restart TaskMaster to restore all defaults.\n
+        \nTaskMaster app folder:
+        \n{0}
+    </sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.RestartRequired">Restart Required</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.EnabledRestart">The setting 'Run as Admin' as been enabled and saved.\n
+        \nTaskMaster will need to be restarted before this change is applied.
+    </sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.DisabledRestart">The setting 'Run as Admin' as been disabled and saved.\n
+        \nTaskMaster will need to be restarted before this change is applied.
+    </sys:String>
+
+    <sys:String x:Key="Message.SettingsTab.History.Saved">Settings saved.</sys:String>
+    <sys:String x:Key="Message.SettingsTab.History.Canceled">Settings change canceled.</sys:String>
+
+    <sys:String x:Key="Message.SettingsTab.History.RunAsAdmin">TaskMaster is running as Administrator</sys:String>
+
+    <!-- Update Check Dialog Titles and Messages -->
+    <sys:String x:Key="Title.SettingsTab.Dialog.UpdateFound">Update Available</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.UpdateFound">A new version ({0}) is available.\n
+        \nLatest changes:
+        \n{1}\n
+        \nOpen the download page?
+    </sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.UpdateNotFound">No Update Available</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.UpdateNotFound">You are running the latest version ({0}).</sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.UpdateError">Update Error</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.UpdateError">Error occurred in update check. Try again later. If this issue persists, please report bug on Taskmaster GitHub.</sys:String>
+
+    <!-- Buttons -->
+    <sys:String x:Key="Text.Button.Save.Settings">Save Settings</sys:String>
+    <sys:String x:Key="Text.Button.Cancel.Changes">Cancel Changes</sys:String>
+    <sys:String x:Key="Text.Button.Restore.Settings">Restore Defaults</sys:String>
+
+    <sys:String x:Key="Text.Button.CheckUpdates">Check for Updates</sys:String>
+    <sys:String x:Key="Text.Button.About">About TaskMaster</sys:String>
+    <sys:String x:Key="Text.Button.Freeware">Freeware</sys:String>
+    <sys:String x:Key="Text.Button.License">License</sys:String>
+    <sys:String x:Key="Text.Button.Uninstall">Uninstall</sys:String>
+
+    <!-- ComboBoxes -->
+    <sys:String x:Key="Text.ComboBox.UiScale">UI Scale</sys:String>
+    <sys:String x:Key="Text.ComboBox.Theme">Theme</sys:String>
+    <sys:String x:Key="Text.ComboBox.Theme.Dark">Dark</sys:String>
+    <sys:String x:Key="Text.ComboBox.Theme.Light">Light</sys:String>
+    <sys:String x:Key="Text.ComboBox.Theme.Auto">Auto</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style">Style</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style.Edge">Edge</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style.Subtle">Subtle</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style.Rounded">Rounded</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style.Pill">Pill</sys:String>
+
+    <!-- CheckBoxes -->
+    <sys:String x:Key="Text.CheckBox.UpdatesCheck">Check for Updates on Startup</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.UpdatesCheck">Enable or disable automatic update checks via TaskMaster GitHub on startup</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.WindowsStartup">Launch on Windows Startup</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.WindowsStartup">Enable or disable launching TaskMaster when Windows starts</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.StartMinimized">Launch Minimized</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.StartMinimized">Enable or disable starting TaskMaster minimized to the system tray</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.TrayMinimize">Minimize to System Tray</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.TrayMinimize">Enable or disable minimizing TaskMaster to the system tray instead of the taskbar</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.CloseMinimizes">Close button minimizes</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.CloseMinimizes">Enable or disable minimizing TaskMaster when the close button is clicked</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.TrayNotifications">Show System Tray Notifications</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.TrayNotifications">Enable or disable showing notifications in the system tray</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.RecallWindowPos">Remember window position</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.RecallWindowPos">Enable or disable remembering the last window position of TaskMaster on close</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.RunAsAdmin">Launch as Administrator</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.RunAsAdmin">Enable to attempt to run TaskMaster with elevated permissions. This will not affect any processes launched by Task Launcher, only processes killed by Task Killer.</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.AlwaysOnTop">Always on top</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.AlwaysOnTop">Enable or disable trying to keep the TaskMaster window always on top of other windows</sys:String>
+
+    <!-- Numbers Input -->
+    <sys:String x:Key="Text.LauncherDelay">Time before re-launching closed app</sys:String>
+    <sys:String x:Key="Text.MaxRetry">Maximum re-launch retries on failure</sys:String>
+    <sys:String x:Key="Text.MaxRetry.Killer">Maximum re-kill retries on failure</sys:String>
+    <sys:String x:Key="Text.KillerDelay">Time before killing apps if detected</sys:String>
+    <sys:String x:Key="Text.MaxHistory">Launch/Kill history maximum entries</sys:String>
+
+
+
+    <!-- ====================== START of App CULTURE Dialog Section ====================== -->
+    <sys:String x:Key="Text.CultureDialog.Title">Choose your language</sys:String>
+    <!-- - First Use Messages - -->
+    <sys:String x:Key="Message.CultureDialog.History.Welcome">Welcome to TaskMaster! Initial settings have been applied.</sys:String>
+    <sys:String x:Key="Message.CultureDialog.History.ReviewSettings">Please review settings and click Save to persist them.</sys:String>
+    <sys:String x:Key="Message.CultureDialog.History.RestoreDefaults">You can also click 'Restore Defaults' to reset settings to defaults.</sys:String>
+    <sys:String x:Key="Message.CultureDialog.History.Uninstall">To start fresh, click 'Uninstall' to delete all settings and saved apps.</sys:String>
+    <sys:String x:Key="Message.CultureDialog.History.Help">Click 'Help' for documentation and support links. Cheers!  -SemlerPDX</sys:String>
+
+
+
+    <!-- ====================== START of App ABOUT Dialog Section ====================== -->
+    <!-- App About Content -->
+    <sys:String x:Key="Text.AboutDialog.Title">About TaskMaster</sys:String>
+    <sys:String x:Key="Text.AboutDialog.Subtitle">I made this for the world with hope that it will be useful. -SemlerPDX</sys:String>
+
+    <sys:String x:Key="Content.AboutDialog.AppInfo.Version">Version:</sys:String>
+
+    <sys:String x:Key="Content.AboutDialog.AppInfo.Author">Author:</sys:String>
+
+    <sys:String x:Key="Content.AboutDialog.AppInfo.Contact">Contact:</sys:String>
+    <sys:String x:Key="Text.AboutDialog.AppInfo.Contact">github.com/SemlerPDX/TaskMaster</sys:String>
+    <sys:String x:Key="Uri.AboutDialog.AppInfo.Contact">https://github.com/SemlerPDX/TaskMaster</sys:String>
+    <sys:String x:Key="ToolTip.AboutDialog.AppInfo.Contact">https://github.com/SemlerPDX/TaskMaster</sys:String>
+
+    <sys:String x:Key="Content.AboutDialog.AppInfo.License">License:</sys:String>
+    <sys:String x:Key="Text.AboutDialog.AppInfo.License">GNU General Public License v3</sys:String>
+    <sys:String x:Key="Uri.AboutDialog.AppInfo.License">https://www.gnu.org/licenses/licenses.en.html</sys:String>
+    <sys:String x:Key="ToolTip.AboutDialog.AppInfo.License">https://www.gnu.org/licenses/licenses.en.html</sys:String>
+
+
+    <!-- ====================== START of App HELP Dialog Section ====================== -->
+    <sys:String x:Key="Text.HelpDialog.Title">TaskMaster Help</sys:String>
+
+    <!-- == App Help - Content Section == -->
+    <!-- Restore Settings Help Strings -->
+    <sys:String x:Key="Text.HelpDialog.Restore.Header">Restore</sys:String>
+    <sys:String x:Key="Text.HelpDialog.Restore.Body">
+        If TaskMaster is not functioning properly, press the Restore Defaults button in the Settings Tab and restart TaskMaster.
+        This will not delete saved launcher or killer tasks - only settings will be restored.
+    </sys:String>
+
+    <!-- Uninstall Application Help Strings -->
+    <sys:String x:Key="Text.HelpDialog.Uninstall.Header">Uninstall</sys:String>
+    <sys:String x:Key="Text.HelpDialog.Uninstall.Body">
+        If TaskMaster is still not functioning properly or if the issue(s) remain, press the Uninstall button in the Settings Tab.
+        This will delete all saved launcher or killer tasks, and settings. Restart TaskMaster to restore defaults.
+    </sys:String>
+
+    <!-- Permission Levels Help Strings -->
+    <sys:String x:Key="Text.HelpDialog.Permissions.Header">Permission Issues</sys:String>
+    <sys:String x:Key="Text.HelpDialog.Permissions.Body">
+        Starting and stopping processes in Windows can have issues relating to permission levels.
+        TaskMaster cannot stop processes with elevated permissions unless running as administrator.
+        TaskMaster will not launch processes with elevated permissions even when running as administrator.
+    </sys:String>
+
+
+    <!-- == App Help - Additional Help Links Section == -->
+    <sys:String x:Key="Text.HelpDialog.HelpLinks.Header">Additional Help Links</sys:String>
+
+    <!-- Documentation Link Strings -->
+    <sys:String x:Key="Content.HelpDialog.HelpLinks.Documentation">Complete Documentation:</sys:String>
+    <sys:String x:Key="Text.HelpDialog.HelpLinks.Documentation">TaskMaster Wiki</sys:String>
+    <sys:String x:Key="Uri.HelpDialog.HelpLinks.Documentation">https://github.com/SemlerPDX/TaskMaster/wiki</sys:String>
+    <sys:String x:Key="ToolTip.HelpDialog.HelpLinks.Documentation">https://github.com/SemlerPDX/TaskMaster/wiki</sys:String>
+
+    <!-- Issues Link Strings -->
+    <sys:String x:Key="Content.HelpDialog.HelpLinks.BugReports">Found a bug or issue?</sys:String>
+    <sys:String x:Key="Text.HelpDialog.HelpLinks.BugReports">Bug Reports</sys:String>
+    <sys:String x:Key="Uri.HelpDialog.HelpLinks.BugReports">https://github.com/SemlerPDX/TaskMaster/issues</sys:String>
+    <sys:String x:Key="ToolTip.HelpDialog.HelpLinks.BugReports">https://github.com/SemlerPDX/TaskMaster/issues</sys:String>
+
+    <!-- Discussions Link Strings -->
+    <sys:String x:Key="Content.HelpDialog.HelpLinks.Discussions">Ask a question or get help:</sys:String>
+    <sys:String x:Key="Text.HelpDialog.HelpLinks.Discussions">Discussion Board</sys:String>
+    <sys:String x:Key="Uri.HelpDialog.HelpLinks.Discussions">https://github.com/SemlerPDX/TaskMaster/discussions</sys:String>
+    <sys:String x:Key="ToolTip.HelpDialog.HelpLinks.Discussions">https://github.com/SemlerPDX/TaskMaster/discussions</sys:String>
+
+
+
+    <!-- ====================== START of App ABOUT Dialog Section ====================== -->
+    <!-- App License Content -->
+    <sys:String x:Key="Text.LicenseDialog.Title">TaskMaster License</sys:String>
+    <sys:String x:Key="Text.LicenseDialog.Subtitle">TaskMaster is a utility app to automatically start or stop Windows processes</sys:String>
+
+
+
+    <!-- ====================== START of App SUPPORT Dialog Section ====================== -->
+    <!-- App Support Content -->
+    <sys:String x:Key="Text.SupportDialog.Title">TaskMaster is Freeware</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Subtitle">TaskMaster is an open-source freeware utility application for Windows by SemlerPDX</sys:String>
+
+    <sys:String x:Key="Text.SupportDialog.Freeware.Header">Other Freeware recommended and used by SemlerPDX:</sys:String>
+
+    <sys:String x:Key="Content.SupportDialog.PowerToys">Microsoft Power Toys:</sys:String>
+    <sys:String x:Key="Text.SupportDialog.PowerToys">learn.microsoft.com/.../powertoys</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.PowerToys">https://learn.microsoft.com/en-us/windows/powertoys/</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.PowerToys">https://learn.microsoft.com/en-us/windows/powertoys/</sys:String>
+    <sys:String x:Key="Text.SupportDialog.PowerToys.Description">Windows Power Toys provides a suite of useful tools and utilities for any Windows user.</sys:String>
+
+    <sys:String x:Key="Content.SupportDialog.Everything">Everything by VoidTools:</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Everything">voidtools.com</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.Everything">https://www.voidtools.com/</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.Everything">https://www.voidtools.com/</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Everything.Description">Everything by VoidTools is a powerful and fast search utility, much faster than Windows Search.</sys:String>
+
+    <sys:String x:Key="Content.SupportDialog.Sms">Server Monitor System:</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Sms">github.com/SemlerPDX/ServerMonitorSystem</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.Sms">https://github.com/SemlerPDX/ServerMonitorSystem</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.Sms">https://github.com/SemlerPDX/ServerMonitorSystem</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Sms.Description">SMS is another utility app by SemlerPDX for remote Windows server process alerts and more.</sys:String>
+
+
+    <!-- Author Support Link Buttons -->
+    <sys:String x:Key="Text.SupportDialog.LinkButtons.Header">Support is greatly appreciated and highly encouraging!</sys:String>
+    <sys:String x:Key="Text.SupportDialog.LinkButtons.Body">TaskMaster is the product of hundreds of hours of development and testing, and countless pots of coffee. Feedback, contributions, and support are very welcome!</sys:String>
+    <sys:String x:Key="Text.SupportDialog.LinkButtons.ThankYou">Thank you for using TaskMaster!</sys:String>
+
+    <sys:String x:Key="Uri.SupportDialog.LinkButtons.Patreon">https://www.patreon.com/SemlerPDX</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.LinkButtons.Patreon">patreon.com/SemlerPDX</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.LinkButtons.Coffee">https://buymeacoffee.com/SemlerPDX</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.LinkButtons.Coffee">buymeacoffee.com/SemlerPDX</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.LinkButtons.PayPal">https://veterans-gaming.com/semlerpdx/donate/</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.LinkButtons.PayPal">veterans-gaming.com/semlerpdx/donate</sys:String>
+
+</ResourceDictionary>

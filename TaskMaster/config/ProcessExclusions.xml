@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<!-- ==== PROCESS EXCLUSIONS POLICY README ====
+
+Add any processes (without extension) you wish to exclude
+from TaskMaster as tasks which can be launched or killed.
+
+Entries in this list will also not appear in the Running
+Processes list boxes in any TaskMaster tab view.
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Many processes listed below should be running on Windows
+computers and should not be ended without careful consideration.
+
+If you need to work with one of these processes in Taskmaster,
+you will need to remove its entry below and reload TaskMaster.
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+This list also includes processes that are known to be impossible
+for the Task Killer to stop even when running as administrator.
+MBAMService (Malware Bytes) is one such example, naturally.
+-->
+<ProcessExclusions>
+  <Names>
+    <Name>Idle</Name>
+    <Name>System</Name>
+    <Name>ApplicationFrameHost</Name>
+    <Name>audiodg</Name>
+    <Name>backgroundTaskHost</Name>
+    <Name>conhost</Name>
+    <Name>csrss</Name>
+    <Name>ctfmon</Name>
+    <Name>dasHost</Name>
+    <Name>DataExchangeHost</Name>
+    <Name>dllhost</Name>
+    <Name>dwm</Name>
+    <Name>fontdrvhost</Name>
+    <Name>lsass</Name>
+    <Name>MBAMService</Name>
+    <Name>mdm</Name>
+    <Name>Microsoft.ServiceHub.Controller</Name>
+    <Name>MoUsoCoreWorker</Name>
+    <Name>MpDefenderCoreService</Name>
+    <Name>MsMpEng</Name>
+    <Name>NisSrv</Name>
+    <Name>SearchApp</Name>
+    <Name>SearchFilterHost</Name>
+    <Name>SearchIndexer</Name>
+    <Name>SearchProtocolHost</Name>
+    <Name>smartscreen</Name>
+    <Name>SecurityHealthService</Name>
+    <Name>SecurityHealthSystray</Name>
+    <Name>ShellExperienceHost</Name>
+    <Name>smss</Name>
+    <Name>SystemSettingsBroker</Name>
+    <Name>taskhostw</Name>
+    <Name>TextInputHost</Name>
+    <Name>unsecapp</Name>
+    <Name>wininit</Name>
+    <Name>winlogon</Name>
+    <Name>WmiPrvSE</Name>
+    <Name>WUDFHost</Name>
+  </Names>
+</ProcessExclusions>

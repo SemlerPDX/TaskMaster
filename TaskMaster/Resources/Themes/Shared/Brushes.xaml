@@ -1,0 +1,120 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.   
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Dynamic Brushes based on raw colors from current theme, variable during runtime -->
+    <!-- Window / Text -->
+    <SolidColorBrush x:Key="Brush.Window.Background" Color="{DynamicResource Color.Window.Background}"/>
+    <SolidColorBrush x:Key="Brush.Window.Border" Color="{DynamicResource Color.Window.Border}"/>
+    <SolidColorBrush x:Key="Brush.Panel.Background" Color="{DynamicResource Color.Panel.Background}"/>
+    <SolidColorBrush x:Key="Brush.Panel.Background.Alt" Color="{DynamicResource Color.Panel.Background.Alt}"/>
+    <SolidColorBrush x:Key="Brush.Accent" Color="{DynamicResource Color.Accent}"/>
+    <SolidColorBrush x:Key="Brush.Accent.Dim" Color="{DynamicResource Color.Accent.Dim}"/>
+    <SolidColorBrush x:Key="Brush.Border" Color="{DynamicResource Color.Border}"/>
+    <SolidColorBrush x:Key="Brush.Shadow" Color="{DynamicResource Color.Shadow}"/>
+
+    <!-- Separators -->
+    <SolidColorBrush x:Key="Brush.Separator" Color="{DynamicResource Color.Separator}"/>
+
+    <!-- Text -->
+    <SolidColorBrush x:Key="Brush.Text" Color="{DynamicResource Color.Text}"/>
+    <SolidColorBrush x:Key="Brush.Text.Dim" Color="{DynamicResource Color.Text.Dim}"/>
+    <SolidColorBrush x:Key="Brush.Text.Readonly" Color="{DynamicResource Color.Text.Readonly}"/>
+
+    <!-- ToolTips -->
+    <SolidColorBrush x:Key="Brush.ToolTip.Background" Color="{DynamicResource Color.ToolTip.Background}"/>
+    <SolidColorBrush x:Key="Brush.ToolTip.Border" Color="{DynamicResource Color.ToolTip.Border}"/>
+    <SolidColorBrush x:Key="Brush.ToolTip.Text" Color="{DynamicResource Color.ToolTip.Text}"/>
+
+    <!-- TextBoxes -->
+    <SolidColorBrush x:Key="Brush.TextBox.Background" Color="{DynamicResource Color.TextBox.Background}"/>
+    <SolidColorBrush x:Key="Brush.TextBox.Background.ReadOnly" Color="{DynamicResource Color.TextBox.Background.ReadOnly}"/>
+    <SolidColorBrush x:Key="Brush.TextBox.Background.NumericInput" Color="{DynamicResource Color.TextBox.Background.NumericInput}"/>
+    <SolidColorBrush x:Key="Brush.TextBox.Border.NumericInput" Color="{DynamicResource Color.TextBox.Border.NumericInput}"/>
+
+    <!-- ListBoxes -->
+    <SolidColorBrush x:Key="Brush.ListBox.Background" Color="{DynamicResource Color.ListBox.Background}"/>
+    <SolidColorBrush x:Key="Brush.ListItem.Border.Hover" Color="{DynamicResource Color.ListItem.Border.Hover}"/>
+    <SolidColorBrush x:Key="Brush.ListItem.Selected.Background" Color="{DynamicResource Color.ListItem.Selected.Background}"/>
+    <SolidColorBrush x:Key="Brush.ListItem.Selected.Border" Color="{DynamicResource Color.ListItem.Selected.Border}"/>
+    <SolidColorBrush x:Key="Brush.ListItem.Selected.Text" Color="{DynamicResource Color.ListItem.Selected.Text}"/>
+    <SolidColorBrush x:Key="Brush.ListItem.SelectedInactive.Background" Color="{DynamicResource Color.ListItem.SelectedInactive.Background}"/>
+    <SolidColorBrush x:Key="Brush.ListItem.SelectedInactive.Border" Color="{DynamicResource Color.ListItem.SelectedInactive.Border}"/>
+    <SolidColorBrush x:Key="Brush.ListItem.SelectedInactive.Text" Color="{DynamicResource Color.ListItem.SelectedInactive.Text}"/>
+
+
+    <!-- CheckBoxes -->
+    <SolidColorBrush x:Key="Brush.CheckBox.Background" Color="{DynamicResource Color.CheckBox.Background}"/>
+    <SolidColorBrush x:Key="Brush.CheckBox.Border" Color="{DynamicResource Color.CheckBox.Border}"/>
+    <SolidColorBrush x:Key="Brush.CheckBox.Checkmark" Color="{DynamicResource Color.CheckBox.Checkmark}"/>
+
+
+    <SolidColorBrush x:Key="Brush.ScrollBar.Background" Color="{DynamicResource Color.ScrollBar.Background}"/>
+    <!-- gutter behind track -->
+    <SolidColorBrush x:Key="Brush.ScrollBar.Track" Color="{DynamicResource Color.ScrollBar.Track}"/>
+    <SolidColorBrush x:Key="Brush.ScrollBar.Thumb" Color="{DynamicResource Color.ScrollBar.Thumb}"/>
+    <SolidColorBrush x:Key="Brush.ScrollBar.Thumb.Hover" Color="{DynamicResource Color.ScrollBar.Thumb.Hover}"/>
+    <SolidColorBrush x:Key="Brush.ScrollBar.Thumb.Pressed" Color="{DynamicResource Color.ScrollBar.Thumb.Pressed}"/>
+
+    <SolidColorBrush x:Key="Brush.ScrollBar.Button.Background" Color="{DynamicResource Color.ScrollBar.Button.Background}"/>
+    <!-- transparent by default -->
+    <SolidColorBrush x:Key="Brush.ScrollBar.Button.Background.Hover" Color="{DynamicResource Color.ScrollBar.Button.Background.Hover}"/>
+    <!-- subtle hover glass -->
+    <SolidColorBrush x:Key="Brush.ScrollBar.Button.Background.Pressed" Color="{DynamicResource Color.ScrollBar.Button.Background.Pressed}"/>
+
+    <SolidColorBrush x:Key="Brush.ScrollBar.Arrow" Color="{DynamicResource Color.ScrollBar.Arrow}"/>
+    <SolidColorBrush x:Key="Brush.ScrollBar.Arrow.Pressed" Color="{DynamicResource Color.ScrollBar.Arrow.Pressed}"/>
+
+    
+    <!-- Controls -->
+    <SolidColorBrush x:Key="Brush.Control.Border.Hover" Color="{DynamicResource Color.Control.Border.Hover}"/>
+    <SolidColorBrush x:Key="Brush.Control.Border.Focus" Color="{DynamicResource Color.Control.Border.Focus}"/>
+    
+    <!-- Popups -->
+    <SolidColorBrush x:Key="Brush.Popup.Background" Color="{DynamicResource Color.Popup.Background}"/>
+    <SolidColorBrush x:Key="Brush.Popup.Border" Color="{DynamicResource Color.Popup.Border}"/>
+    
+    <!-- Tabs -->
+    <SolidColorBrush x:Key="Brush.TabHeader.Text" Color="{DynamicResource Color.Tab.Text}"/>
+    <SolidColorBrush x:Key="Brush.TabHeader.Text.Dim" Color="{DynamicResource Color.Tab.Text.Dim}"/>
+    <SolidColorBrush x:Key="Brush.TabHeader.Idle" Color="{DynamicResource Color.Tab.Idle}"/>
+    <SolidColorBrush x:Key="Brush.TabHeader.Hover" Color="{DynamicResource Color.Tab.Hover}"/>
+    <SolidColorBrush x:Key="Brush.TabHeader.Selected" Color="{DynamicResource Color.Tab.Selected}"/>
+    <SolidColorBrush x:Key="Brush.TabHeader.Border" Color="{DynamicResource Color.Tab.Border}"/>
+
+    <!-- Buttons -->
+    <SolidColorBrush x:Key="Brush.Button.Text" Color="{DynamicResource Color.Button.Text}"/>
+    <SolidColorBrush x:Key="Brush.Button.Background" Color="{DynamicResource Color.Button.Background}"/>
+    <SolidColorBrush x:Key="Brush.Button.Background.Hover" Color="{DynamicResource Color.Button.Background.Hover}"/>
+    <SolidColorBrush x:Key="Brush.Button.Background.Pressed" Color="{DynamicResource Color.Button.Background.Pressed}"/>
+    <SolidColorBrush x:Key="Brush.Button.Background.Chrome" Color="{DynamicResource Color.Button.Background.Chrome}"/>
+    <SolidColorBrush x:Key="Brush.Button.Background.Hover.Chrome" Color="{DynamicResource Color.Button.Background.Hover.Chrome}"/>
+    <SolidColorBrush x:Key="Brush.Button.Background.Pressed.Chrome" Color="{DynamicResource Color.Button.Background.Pressed.Chrome}"/>
+    <SolidColorBrush x:Key="Brush.Button.Border" Color="{DynamicResource Color.Button.Border}"/>
+    <SolidColorBrush x:Key="Brush.Button.Shadow" Color="{DynamicResource Color.Button.Shadow}"/>
+
+    
+    <!-- ComboBoxes -->
+    <SolidColorBrush x:Key="Brush.ComboBox.Text" Color="{DynamicResource Color.ComboBox.Text}"/>
+    <SolidColorBrush x:Key="Brush.ComboBox.Text.Selection" Color="{DynamicResource Color.ComboBox.Text.Selection}"/>
+    <SolidColorBrush x:Key="Brush.ComboBox.Background" Color="{DynamicResource Color.ComboBox.Background}"/>
+    <SolidColorBrush x:Key="Brush.ComboBox.Background.Hover" Color="{DynamicResource Color.ComboBox.Background.Hover}"/>
+    <SolidColorBrush x:Key="Brush.ComboBox.Background.Selection" Color="{DynamicResource Color.ComboBox.Background.Selection}"/>
+    <SolidColorBrush x:Key="Brush.ComboBox.Border" Color="{DynamicResource Color.ComboBox.Border}"/>
+</ResourceDictionary>

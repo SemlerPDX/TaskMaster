@@ -1,0 +1,18 @@
+# Build & publish outputs
+artifacts/
+bin/
+obj/
+.vs/
+
+# Packages/installers/archives
+*.zip
+*.msi
+*.msix
+*.appx
+*.nupkg
+
+# ===== Keeping publish profiles (to ensure they stay tracked)
+!**/Properties/PublishProfiles/*.pubxml
+
+# ===== Exclude personal dev helper file inside the project folder
+/TaskMaster/FolderTreeWithFiles.txt

@@ -1,0 +1,109 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.   
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="clr-namespace:TaskMaster.Presentation.UI">
+
+    <!-- TabControl chrome -->
+    <Style TargetType="TabControl">
+        <Setter Property="Background" Value="{DynamicResource Brush.PanelBackground}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.Border}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <UniformGrid Rows="1"
+                                     Grid.Row="0"
+                                     Margin="0"
+                                     IsItemsHost="True"/>
+                        <ContentPresenter x:Name="PART_SelectedContentHost"
+                                          Grid.Row="1"
+                                          Margin="0"
+                                          ContentSource="SelectedContent"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="TabHeader.Large">
+        <TextBlock Text="{Binding}" FontSize="{StaticResource Font.Size.Header}"/>
+    </DataTemplate>
+
+    <!-- TabItem Default Style -->
+    <Style TargetType="TabItem">
+        <Setter Property="Foreground" Value="{DynamicResource Brush.TabHeader.Text.Dim}"/>
+        <Setter Property="Background" Value="{DynamicResource Brush.TabHeader.Idle}"/>
+        <Setter Property="Padding" Value="12,6"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.TabHeader.Border}"/>
+        <Setter Property="BorderThickness" Value="1,1,1,0"/>
+        <Setter Property="MinWidth" Value="{StaticResource Size.TabItem.MinWidth}"/>
+        <Setter Property="Height" Value="{StaticResource Size.TabStrip.Height}"/>
+        <Setter Property="HeaderTemplate" Value="{StaticResource TabHeader.Large}"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="True"
+                            CornerRadius="{Binding (ui:TabItemChrome.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
+                        <ContentPresenter ContentSource="Header"
+                                          RecognizesAccessKey="True"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Margin="0"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush.TabHeader.Selected}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Brush.TabHeader.Text}"/>
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush.TabHeader.Hover}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Brush.TabHeader.Text}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- TabItem Left Variant -->
+    <Style x:Key="TabItem.Left" TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}">
+        <Setter Property="ui:TabItemChrome.CornerRadius" Value="4,0,0,4"/>
+    </Style>
+
+    <!-- TabItem Right Variant -->
+    <Style x:Key="TabItem.Right" TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}">
+        <Setter Property="ui:TabItemChrome.CornerRadius" Value="0,4,4,0"/>
+    </Style>
+</ResourceDictionary>

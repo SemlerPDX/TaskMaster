@@ -1,0 +1,150 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<UserControl x:Class="TaskMaster.View.KillerTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:TaskMaster.ViewModel"
+             xmlns:pb="clr-namespace:TaskMaster.Presentation.Behaviors"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:KillerTabViewModel, IsDesignTimeCreatable=True}"
+             d:DesignHeight="{StaticResource Window.BaseHeight.Content}"
+             d:DesignWidth="{StaticResource Window.BaseWidth}"
+             KeyboardNavigation.TabNavigation="None"
+             FocusManager.IsFocusScope="True"
+             Focusable="False"
+             UseLayoutRounding="True"
+             SnapsToDevicePixels="True">
+
+    <Grid Background="Transparent" Margin="6">
+        <Border CornerRadius="{DynamicResource CornerRadius.CurrentStyle}"
+                Background="{DynamicResource Brush.Panel.Background}"
+                BorderBrush="{DynamicResource Brush.Border}"
+                BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="{StaticResource Grid.ListRegion.Height}"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="{StaticResource Grid.History.Height}"/>
+                </Grid.RowDefinitions>
+
+                <!-- ListBox Sub-titles -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="{StaticResource Grid.ButtonStack.Width}"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Margin="12,9,0,4"
+                               Style="{StaticResource TextBlock.SubTitle}"
+                               Text="{DynamicResource Text.KillerTab.SavedItems}"/>
+                    <TextBlock Grid.Column="2" Margin="0,9,12,4" HorizontalAlignment="Right"
+                               Style="{StaticResource TextBlock.SubTitle}"
+                               Text="{DynamicResource Text.RunningProcesses}"/>
+
+                </Grid>
+
+                <!-- Two listboxes with vertical button column -->
+                <Grid Grid.Row="0" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{StaticResource Grid.ListRegion.Width}"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="{StaticResource Grid.ButtonStack.Width}"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="{StaticResource Grid.ListRegion.Width}"/>
+                    </Grid.ColumnDefinitions>
+            
+                    <!-- Saved -->
+                    <!-- New Short Undo conditionally visible button with the localized string for "Undo" -->
+                    <Button Grid.Column="0" Margin="0,8,2,0" HorizontalAlignment="Right" VerticalAlignment="Top"
+                            Style="{StaticResource Button.Short}"
+                            Content="{DynamicResource Text.Button.Undo}"
+                            Command="{Binding CancelCommand}"
+                            IsEnabled="{Binding SaveButtonEnabled}"
+                            Visibility="{Binding SaveButtonEnabled, Converter={StaticResource BoolToVisibility}}"/>
+                    <ListBox Grid.Column="0" Margin="8,36,0,0"
+                             Style="{StaticResource ListBox.Left}"
+                             ItemsSource="{Binding WorkingKillers}"
+                             DisplayMemberPath="DisplayName"
+                             SelectedItem="{Binding SelectedKiller, Mode=TwoWay}"/>
+
+                    <!-- Buttons -->
+                    <StackPanel Grid.Column="2" Margin="0,36,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                        <Button Margin="0,4,0,20" Style="{StaticResource Button.Narrow}"
+                                Content="{DynamicResource Text.Button.Save}" Command="{Binding SaveCommand}"
+                                IsEnabled="{Binding SaveButtonEnabled}"/>
+                        <Button Margin="0,4,0,4" Style="{StaticResource Button.Narrow}"
+                                Content="{DynamicResource Text.Button.Browse}" Command="{Binding BrowseCommand}"/>
+                
+                        <Separator Margin="0,6,0,6"/>
+                
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="{StaticResource Grid.ButtonStack.Width.Spacer}"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Column="0" Margin="2,4,1,4" Style="{StaticResource Button.Square}"
+                                            Content="↑" Command="{Binding MoveUpCommand}"/>
+                            <Button Grid.Column="2" Margin="0,4,0,4" Style="{StaticResource Button.Square}"
+                                            Content="↓" Command="{Binding MoveDownCommand}"/>
+                        </Grid>
+                        <Button Margin="0,4,0,4" Style="{StaticResource Button.Narrow}"
+                                Content="{DynamicResource Text.Button.Remove}" Command="{Binding RemoveSavedCommand}"/>
+                    </StackPanel>
+
+                    <!-- Running -->
+                    <!-- New Shorter Add button with left facing chevron and the localized string for "Add" -->
+                    <Button Grid.Column="4" Margin="2,8,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Style="{StaticResource Button.Short.Left}"
+                            Content="{DynamicResource Text.Button.Add}"
+                            Command="{Binding AddFromRunningCommand}"/>
+                    <ListBox Grid.Column="4" Margin="0,36,8,0"
+                             Style="{StaticResource ListBox.Right}"
+                             ItemsSource="{Binding DataContext.Running.Items, RelativeSource={RelativeSource AncestorType=Window}}"
+                             SelectedValuePath="Name"
+                             DisplayMemberPath="Name"
+                             SelectedValue="{Binding SelectedRunning, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+        
+                <!-- Separator -->
+                <Separator Grid.Row="2" Margin="4,10,4,9"/>
+        
+                <!-- History -->
+                <TextBlock Grid.Row="3" Margin="12,4,0,6"
+                           Style="{StaticResource TextBlock.SubTitle}"
+                           Text="{DynamicResource Text.KillerTab.History}"/>
+                <!-- New Short Clear History button with the localized string for "Clear" -->
+                <Button Grid.Row="3" Margin="0,0,16,2" HorizontalAlignment="Right" VerticalAlignment="Top"
+                        Style="{StaticResource Button.Short}"
+                        Content="{DynamicResource Text.Button.Clear}"
+                        ToolTip="{DynamicResource ToolTip.Button.Clear}"
+                        Command="{Binding ClearHistory}"/>
+                <ListBox x:Name="LbKillerHistory" Grid.Row="4"
+                         Style="{StaticResource ListBox.Wide}"
+                         ItemsSource="{Binding KillerHistory}"
+                         pb:ListBoxAutoScroll.AutoScrollToEnd="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

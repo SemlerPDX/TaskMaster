@@ -1,0 +1,81 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.   
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vw="clr-namespace:TaskMaster.View"
+                    xmlns:dvw="clr-namespace:TaskMaster.View.Dialog"
+                    xmlns:vm="clr-namespace:TaskMaster.ViewModel"
+                    xmlns:dvm="clr-namespace:TaskMaster.ViewModel.Dialog">
+
+    <!-- ViewModel-to-View mapping -->
+    <DataTemplate DataType="{x:Type vm:LauncherTabViewModel}">
+        <vw:LauncherTabView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:KillerTabViewModel}">
+        <vw:KillerTabView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SettingsTabViewModel}">
+        <vw:SettingsTabView/>
+    </DataTemplate>
+    
+    
+    <!-- Launcher Dialog -->
+    <DataTemplate x:Key="LauncherDialogTemplate" DataType="{x:Type vm:LauncherTabViewModel}">
+        <vw:LauncherDialogView/>
+    </DataTemplate>
+
+
+    <!-- Selection chevrons (vector) -->
+    <Geometry x:Key="Icon.CaretDown">M 0 0 L 6 6 L 12 0</Geometry>
+    <Geometry x:Key="Icon.CaretUp">M 0 6 L 6 0 L 12 6</Geometry>
+    <Geometry x:Key="Icon.CaretLeft">M 6 0 L 0 6 L 6 12</Geometry>
+    <Geometry x:Key="Icon.CaretRight">M 0 0 L 6 6 L 0 12</Geometry>
+
+
+    <!-- Language row (flag + display text) -->
+    <DataTemplate x:Key="LanguageItemTemplate">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="2,0">
+            <Image Height="16"
+                   Style="{StaticResource Image.Culture.Flag}"
+                   Panel.ZIndex="9999"
+                   Source="{Binding FlagPath}"
+                   SnapsToDevicePixels="True" UseLayoutRounding="True"/>
+            <TextBlock Margin="8,0,0,0"
+                       Text="{Binding Display}"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+    </DataTemplate>
+    
+    
+    <!-- Focus Selection Transparent Variant -->
+    <Style x:Key="Focus.Transparent" TargetType="{x:Type Control}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <!-- Transparent selector option -->
+                    <Rectangle Stroke="Transparent"
+                               StrokeThickness="0"
+                               Fill="Transparent"
+                               SnapsToDevicePixels="True"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

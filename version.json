@@ -1,0 +1,7 @@
+{
+  "version": "1.2.3.4",
+  "features": {
+    "en-US": "- Improved process polling stability\n- New: Minimize-to-tray option\n- Fix: Titlebar drag behavior over icon/text",
+    "es-ES": "- Estabilidad mejorada en el sondeo de procesos\n- Nuevo: opción de minimizar a la bandeja del sistema\n- Corregido: comportamiento del arrastre de la barra de título sobre icono/texto"
+  }
+}

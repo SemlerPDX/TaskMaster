@@ -1,0 +1,200 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.   
+-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:TaskMaster.Presentation.UI">
+
+    <!-- ComboBoxItem default -->
+    <Style TargetType="ComboBoxItem" x:Key="ComboBoxItem.Default">
+        <Setter Property="Padding" Value="8,4"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource Brush.ComboBox.Text}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Brush.ComboBox.Background.Hover}"/>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Brush.ComboBox.Background.Selection}"/>
+                <Setter Property="Foreground" Value="{DynamicResource Brush.ComboBox.Text.Selection}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.6"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- ComboBox base  -->
+    <Style TargetType="ComboBox" x:Key="ComboBox.Base">
+        <Setter Property="Foreground" Value="{DynamicResource Brush.ComboBox.Text}"/>
+        <Setter Property="Background" Value="{DynamicResource Brush.ComboBox.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush.ComboBox.Border}"/>
+        <Setter Property="BorderThickness" Value="0.5"/>
+        <Setter Property="Padding" Value="8,2"/>
+        <Setter Property="MinHeight" Value="{DynamicResource Size.ComboBox.MinHeight}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="1500"/>
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+        <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItem.Default}"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect x:Name="BtFx"
+                    Color="{DynamicResource Color.Shadow}" 
+                    ShadowDepth="1.5" 
+                    BlurRadius="2" 
+                    Direction="240" 
+                    Opacity="0.8"/>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <!-- Full-width hit area Drop-Down toggle -->
+                        <ToggleButton x:Name="DropDownToggle"
+                                      Background="Transparent"
+                                      BorderThickness="0"
+                                      Focusable="False"
+                                      ClickMode="Press"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="2"
+                                    Padding="{TemplateBinding Padding}">
+                                <Grid MinWidth="{DynamicResource Size.ComboBox.MinWidth}"
+                                      MinHeight="{DynamicResource Size.ComboBox.MinHeight}">
+                                    <!-- Selected item -->
+                                    <ContentPresenter Margin="2,0,34,0"
+                                                      VerticalAlignment="Center"
+                                                      Content="{TemplateBinding SelectedItem}"
+                                                      ContentTemplate="{TemplateBinding ItemTemplate}"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+
+                                    <!-- Chevron area (right side) -->
+                                    <Grid HorizontalAlignment="Right" Width="{DynamicResource Size.ComboBox.Width.Selector}">
+                                        <Border Background="{DynamicResource Brush.ComboBox.Background}"
+                                                BorderThickness="1"
+                                                Margin="6,0,-5,0"
+                                                CornerRadius="0,2,2,0"/>
+                                        <!-- Selection chevron (vector) -->
+                                        <Path x:Name="PART_DropGlyph"
+                                              Margin="0,0,4,0"
+                                              Data="{StaticResource Icon.CaretDown}"
+                                              Stroke="{DynamicResource Brush.Text.Dim}"
+                                              StrokeThickness="{DynamicResource Size.Path.StrokeThickness}"
+                                              StrokeStartLineCap="Round"
+                                              StrokeEndLineCap="Round"
+                                              StrokeLineJoin="Round"
+                                              HorizontalAlignment="Right"
+                                              VerticalAlignment="Center"
+                                              SnapsToDevicePixels="True"/>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </ToggleButton>
+
+                        <!-- Popup -->
+                        <Popup x:Name="PART_Popup"
+                               Placement="Bottom"
+                               AllowsTransparency="True"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               MinWidth="{DynamicResource Size.Popup.MinWidth}"
+                               MinHeight="{DynamicResource Size.Popup.MinHeight}"
+                               MaxHeight="{DynamicResource Size.Popup.MaxHeight}"
+                               PopupAnimation="Slide"
+                               Focusable="False">
+                            <Border Background="{DynamicResource Brush.Popup.Background}"
+                                    BorderBrush="{DynamicResource Brush.Popup.Border}"
+                                    BorderThickness="1"
+                                    CornerRadius="2"
+                                    SnapsToDevicePixels="True">
+                                <ScrollViewer CanContentScroll="True" SnapsToDevicePixels="True">
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+                    <!-- Hover/focus/disabled visuals -->
+                    <ControlTemplate.Triggers>
+                        <!-- Drive popup placement from attached property -->
+                        <Trigger Property="ui:ComboBoxAssist.PopupPlacement" Value="Top">
+                            <Setter TargetName="PART_Popup" Property="Placement" Value="Top"/>
+                            <Setter TargetName="PART_DropGlyph" Property="Data" Value="{StaticResource Icon.CaretUp}"/>
+                        </Trigger>
+                        <Trigger Property="ui:ComboBoxAssist.PopupPlacement" Value="Right">
+                            <Setter TargetName="PART_Popup" Property="Placement" Value="Right"/>
+                            <Setter TargetName="PART_DropGlyph" Property="Data" Value="{StaticResource Icon.CaretRight}"/>
+                        </Trigger>
+                        <Trigger Property="ui:ComboBoxAssist.PopupPlacement" Value="Left">
+                            <Setter TargetName="PART_Popup" Property="Placement" Value="Left"/>
+                            <Setter TargetName="PART_DropGlyph" Property="Data" Value="{StaticResource Icon.CaretLeft}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource Brush.Control.Border.Hover}"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource Brush.Control.Border.Focus}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Bd" Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- Base Chevron for selection area -->
+        <Setter Property="ui:ComboBoxAssist.IconGeometry" Value="{StaticResource Icon.CaretDown}"/>
+    </Style>
+
+    <!-- ComboBox with popup opening upwards -->
+    <Style x:Key="ComboBox.Base.Top"
+           TargetType="ComboBox"
+           BasedOn="{StaticResource ComboBox.Base}">
+        <Setter Property="ui:ComboBoxAssist.PopupPlacement" Value="Top"/>
+    </Style>
+    <!-- ComboBox with popup opening to the right -->
+    <Style x:Key="ComboBox.Base.Right"
+           TargetType="ComboBox"
+           BasedOn="{StaticResource ComboBox.Base}">
+        <Setter Property="ui:ComboBoxAssist.PopupPlacement" Value="Right"/>
+    </Style>
+    <!-- ComboBox with popup opening to the left -->
+    <Style x:Key="ComboBox.Base.Left"
+           TargetType="ComboBox"
+           BasedOn="{StaticResource ComboBox.Base}">
+        <Setter Property="ui:ComboBoxAssist.PopupPlacement" Value="Left"/>
+    </Style>
+
+    <!-- Language picker variant: assigns the template for rows -->
+    <Style TargetType="ComboBox" x:Key="ComboBox.CultureDialog" BasedOn="{StaticResource ComboBox.Base}">
+        <Setter Property="ItemTemplate" Value="{StaticResource LanguageItemTemplate}"/>
+    </Style>
+
+    <!-- Language picker with popup opening upwards variant: assigns the template for rows -->
+    <Style TargetType="ComboBox" x:Key="ComboBox.CultureDialog.Top" BasedOn="{StaticResource ComboBox.Base}">
+        <Setter Property="ItemTemplate" Value="{StaticResource LanguageItemTemplate}"/>
+        <Setter Property="ui:ComboBoxAssist.PopupPlacement" Value="Top"/>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,101 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <Style TargetType="Image">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="1500"/>
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+    </Style>
+
+    <!-- TitleBar App Icon Image -->
+    <Style x:Key="Image.TitleBar.App" TargetType="Image" BasedOn="{StaticResource {x:Type Image}}">
+        <Setter Property="Source" Value="{StaticResource ImageSource.App}"/>
+        <Setter Property="MinWidth" Value="{StaticResource Size.Icon.Width}"/>
+        <Setter Property="MinHeight" Value="{StaticResource Size.Icon.Height}"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect
+                    Color="{DynamicResource Color.Window.Background}" 
+                    ShadowDepth="2.5" 
+                    BlurRadius="2" 
+                    Direction="240" 
+                    Opacity="0.8"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Help Button Image -->
+    <Style x:Key="Image.TitleBar.Help" TargetType="Image" BasedOn="{StaticResource {x:Type Image}}">
+        <Setter Property="Source" Value="{StaticResource ImageSource.Help}"/>
+        <Setter Property="Width" Value="{StaticResource Size.Icon.Width}"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect
+                    Color="{DynamicResource Color.Shadow}" 
+                    ShadowDepth="2.5" 
+                    BlurRadius="2" 
+                    Direction="240" 
+                    Opacity="0.8"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Large Images -->
+    <Style x:Key="Image.Large" TargetType="Image" BasedOn="{StaticResource {x:Type Image}}">
+        <Setter Property="MaxHeight" Value="{StaticResource Size.Image.MaxHeight}"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect
+                    Color="{DynamicResource Color.Shadow}" 
+                    ShadowDepth="4" 
+                    BlurRadius="3" 
+                    Direction="240" 
+                    Opacity="0.8"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Tile Images -->
+    <Style x:Key="Image.Tile" TargetType="Image" BasedOn="{StaticResource {x:Type Image}}">
+        <Setter Property="MaxHeight" Value="256"/>
+    </Style>
+
+    <!-- Button Images -->
+    <Style x:Key="Image.Buttons" TargetType="Image" BasedOn="{StaticResource {x:Type Image}}">
+        <Setter Property="Width" Value="{StaticResource Size.Image.Button.Width}"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect
+                    Color="{DynamicResource Color.Window.Background}" 
+                    ShadowDepth="2.5" 
+                    BlurRadius="2" 
+                    Direction="240" 
+                    Opacity="0.8"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Flag Images -->
+    <Style x:Key="Image.Culture.Flag" TargetType="Image" BasedOn="{StaticResource {x:Type Image}}">
+        <Setter Property="MinHeight" Value="{StaticResource Size.Image.MinHeight.Flag}"/>
+    </Style>
+</ResourceDictionary>

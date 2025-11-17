@@ -1,0 +1,86 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.   
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Base TextBlock (shared, not theme-specific) -->
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Font.Family.Primary}"/>
+        <Setter Property="FontSize" Value="{StaticResource Font.Size}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Text}"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="1500"/>
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+    </Style>
+
+    <!-- Title TextBlock variant -->
+    <Style x:Key="TextBlock.Title" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="FontSize" Value="{StaticResource Font.Size.Title}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect x:Name="BtFx"
+                    Color="{DynamicResource Color.Text.Shadow}" 
+                    ShadowDepth="2.5" 
+                    BlurRadius="2" 
+                    Direction="240" 
+                    Opacity="0.8"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Header TextBlock variant -->
+    <Style x:Key="TextBlock.Header" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="FontSize" Value="{StaticResource Font.Size.Header}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect x:Name="BtFx"
+                    Color="{DynamicResource Color.Text.Shadow}" 
+                    ShadowDepth="2.5" 
+                    BlurRadius="2" 
+                    Direction="240" 
+                    Opacity="0.8"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Sub-title TextBlock variant -->
+    <Style x:Key="TextBlock.SubTitle" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Text.Dim}"/>
+    </Style>
+    
+    <!--  Body TextBlock variant -->
+    <Style x:Key="TextBlock.Body" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="FontSize" Value="{StaticResource Font.Size}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Text}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <!-- Footer TextBlock variant -->
+    <Style x:Key="TextBlock.Footer" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="FontSize" Value="{StaticResource Font.Size.Small}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Text.Dim}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+    </Style>
+</ResourceDictionary>

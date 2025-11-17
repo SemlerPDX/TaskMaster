@@ -1,0 +1,193 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	<UseWindowsForms>True</UseWindowsForms>
+    <RootNamespace>TaskMaster</RootNamespace>
+	<AssemblyName>TaskMaster</AssemblyName>
+	<ApplicationIcon>assets\taskmaster.ico</ApplicationIcon>
+	<Copyright>Copyright (C) 2025 Aaron Semler</Copyright>
+	<PackageIcon>taskmaster.png</PackageIcon>
+	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+	<RepositoryUrl>https://github.com/SemlerPDX/TaskMaster</RepositoryUrl>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<AssemblyVersion>0.9.9.9</AssemblyVersion>
+	<FileVersion>0.9.9.9</FileVersion>
+	<Title>TaskMaster</Title>
+	<Authors>SemlerPDX</Authors>
+	<Company>VG Labs Software</Company>
+	<Version>0.9.9.9-rc.6</Version>
+	<Description>A simple process launcher and killer utility application.</Description>
+	<PackageProjectUrl>https://github.com/SemlerPDX/TaskMaster</PackageProjectUrl>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+	<NuGetAuditLevel>low</NuGetAuditLevel>
+	<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+	<IncludeSymbols>False</IncludeSymbols>
+	<DocumentationFile>obj\Debug\net8.0-windows\TaskMaster.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+    <IsPublishable>True</IsPublishable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
+    <IsPublishable>True</IsPublishable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DISCLAIMER.txt" />
+    <None Remove="LICENSE.txt" />
+    <None Remove="ProcessExclusions.xml" />
+    <None Remove="README.md" />
+    <None Remove="README.txt" />
+    <None Remove="Resources\Images\buttons\help.png" />
+    <None Remove="Resources\Images\buttons\monitor.png" />
+    <None Remove="Resources\Images\flags\au.png" />
+    <None Remove="Resources\Images\flags\cn.png" />
+    <None Remove="Resources\Images\flags\de.png" />
+    <None Remove="Resources\Images\flags\dk.png" />
+    <None Remove="Resources\Images\flags\es.png" />
+    <None Remove="Resources\Images\flags\fi.png" />
+    <None Remove="Resources\Images\flags\fr.png" />
+    <None Remove="Resources\Images\flags\gr.png" />
+    <None Remove="Resources\Images\flags\it.png" />
+    <None Remove="Resources\Images\flags\jp.png" />
+    <None Remove="Resources\Images\flags\pl.png" />
+    <None Remove="Resources\Images\flags\se.png" />
+    <None Remove="Resources\Images\flags\tr.png" />
+    <None Remove="Resources\Images\flags\us.png" />
+    <None Remove="Resources\Images\freeware\everything.png" />
+    <None Remove="Resources\Images\freeware\powertoys.png" />
+    <None Remove="Resources\Images\freeware\sms.png" />
+    <None Remove="Resources\Images\support\buymeacoffee.png" />
+    <None Remove="Resources\Images\support\patreon.png" />
+    <None Remove="Resources\Images\support\paypal.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DISCLAIMER.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LICENSE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\ProcessExclusions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\taskmaster-tile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\taskmaster.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="9.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\branding\semlerpdx.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\branding\taskmaster-tile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\branding\taskmaster.png">
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Pack>True</Pack>
+    </Resource>
+    <Resource Include="Resources\Images\branding\vgseal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\buttons\help.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\au.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\cn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\de.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\dk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\es.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\fi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\fr.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\gr.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\it.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\jp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\pl.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\se.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\tr.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\flags\us.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\freeware\everything.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\freeware\powertoys.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\freeware\sms.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\support\buymeacoffee.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\support\patreon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\support\paypal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resources\Localization\Strings.en-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+    <Page Update="Resources\Localization\Strings.es-ES.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
+</Project>
