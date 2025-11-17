@@ -24,7 +24,7 @@ namespace TaskMaster.Presentation.UI;
 /// <summary>
 /// Service that tracks application window visibility, minimized state, and tray state.
 /// </summary>
-public sealed class AppVisibilityService : IAppVisibility
+public sealed class AppVisibilityService : IAppVisibility, IDisposable
 {
     private Window? _window;
     private DependencyPropertyDescriptor? _isVisibleDesc;
@@ -122,5 +122,13 @@ public sealed class AppVisibilityService : IAppVisibility
         {
             Changed?.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    /// <summary>
+    /// Disposes the service, detaching from the window if necessary.
+    /// </summary>
+    public void Dispose()
+    {
+        Detach();
     }
 }

@@ -51,15 +51,15 @@ public sealed class AppHost : IDisposable
     private const int WM_SETTINGCHANGE = 0x001A;
 
     // Core services
-    private readonly ISettingsStore _settings;
-    private readonly IConfigStore _config;
-    private readonly IConfigFileHandler _configFileHandler;
-    private readonly ILocalizationService _localization;
-    private readonly IThemeService _theme;
-    private readonly IStyleService _style;
+    private readonly SettingsStore _settings;
+    private readonly ConfigStore _config;
+    private readonly ConfigFileHandler _configFileHandler;
+    private readonly LocalizationService _localization;
+    private readonly ThemeService _theme;
+    private readonly StyleService _style;
+    private readonly ProcessMonitorService _monitor;
 
-    // Processes / policies
-    private readonly IProcessMonitorService _monitor;
+    // Process policies
     private readonly IProcessExclusionsStore _exclusionsStore;
     private readonly IProcessExclusionPolicy _exclusions;
     private readonly IUniqueEntryPolicy _unique;
@@ -352,20 +352,10 @@ public sealed class AppHost : IDisposable
         (_taskKiller as IDisposable)?.Dispose();
         (_running as IDisposable)?.Dispose();
         (_exclusions as IDisposable)?.Dispose();
-        (_exclusionsStore as IDisposable)?.Dispose();
         (_monitor as IDisposable)?.Dispose();
 
         (_tray as IDisposable)?.Dispose();
         (_appVisibility as IDisposable)?.Dispose();
         (_history as IDisposable)?.Dispose();
-
-        (_config as IDisposable)?.Dispose();
-        (_configFileHandler as IDisposable)?.Dispose();
-
-        (_style as IDisposable)?.Dispose();
-        (_theme as IDisposable)?.Dispose();
-        (_localization as IDisposable)?.Dispose();
-
-        (_settings as IDisposable)?.Dispose();
     }
 }
