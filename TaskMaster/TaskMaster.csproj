@@ -20,7 +20,7 @@
 	<Title>TaskMaster</Title>
 	<Authors>SemlerPDX</Authors>
 	<Company>VG Labs Software</Company>
-	<Version>1.0.0.0</Version>
+	<Version>1.0.0</Version>
 	<Description>A simple process launcher and killer utility application.</Description>
 	<PackageProjectUrl>https://github.com/SemlerPDX/TaskMaster</PackageProjectUrl>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -28,6 +28,7 @@
 	<NuGetAuditLevel>low</NuGetAuditLevel>
 	<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
 	<IncludeSymbols>False</IncludeSymbols>
+	<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
 	<DocumentationFile>obj\Debug\net8.0-windows\TaskMaster.xml</DocumentationFile>
   </PropertyGroup>
 
