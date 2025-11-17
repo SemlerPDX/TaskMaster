@@ -26,7 +26,7 @@ namespace TaskMaster.Services;
 /// </summary>
 internal static class LicenseService
 {
-    private const string RootUri = "https://raw.githubusercontent.com/SemlerPDX/TaskMaster/refs/heads/main/";
+    private const string RootUri = "https://raw.githubusercontent.com/SemlerPDX/TaskMaster/refs/heads/master/TaskMaster/";
 
     private const string LicenseFileName = "LICENSE.txt";
     private const string DisclaimerFileName = "DISCLAIMER.txt";
