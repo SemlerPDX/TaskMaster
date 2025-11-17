@@ -36,7 +36,7 @@ public sealed class CommonServices : ICommonServices
     /// Gets the settings store.
     /// </summary>
     public ISettingsStore Settings { get; }
-    
+
     /// <summary>
     /// Gets the configuration store.
     /// </summary>

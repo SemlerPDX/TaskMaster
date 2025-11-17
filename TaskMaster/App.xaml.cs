@@ -72,7 +72,7 @@ public partial class App : System.Windows.Application
         try
         {
             HookGlobalExceptionLogging();
-            
+
             AppUserModelId.Apply();
 
             _singleInstanceMutex = new Mutex(initiallyOwned: true, name: MutexName, createdNew: out bool createdNewMutex);

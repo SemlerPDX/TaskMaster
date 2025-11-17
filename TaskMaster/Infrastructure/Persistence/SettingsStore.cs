@@ -16,9 +16,6 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-using System.IO;
-
-using TaskMaster.Application;
 using TaskMaster.Model;
 using TaskMaster.Services;
 using TaskMaster.Services.Logging;

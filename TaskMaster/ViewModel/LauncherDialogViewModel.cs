@@ -118,7 +118,7 @@ public sealed class LauncherDialogViewModel : BaseViewModel
         public bool Enabled
         {
             get { return _enabled; }
-            set 
+            set
             {
                 if (SetProperty(ref _enabled, value))
                 {

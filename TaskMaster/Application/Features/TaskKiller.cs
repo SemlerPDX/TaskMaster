@@ -20,7 +20,6 @@ using System.Diagnostics;
 
 using TaskMaster.Application.Composition;
 using TaskMaster.Infrastructure.Processes;
-using TaskMaster.Model;
 using TaskMaster.Services;
 using TaskMaster.Services.Logging;
 
@@ -57,7 +56,7 @@ public sealed class TaskKiller : ITaskKiller, IDisposable
 
     private readonly object _gate = new();
     private readonly Dictionary<string, DateTime> _firstSeen = new(StringComparer.OrdinalIgnoreCase);
-    
+
     private readonly Dictionary<string, int> _killRetries = new(StringComparer.OrdinalIgnoreCase);
     private readonly HashSet<string> _disabledForSession = new(StringComparer.OrdinalIgnoreCase);
 
