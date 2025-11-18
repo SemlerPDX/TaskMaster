@@ -12,6 +12,6 @@ currently being supported with security updates.
 ## Reporting a Vulnerability
 
 > [!IMPORTANT]
-> **Please report any security vulnerabilities under [Issues](https://github.com/SemlerPDX/TaskMaster/issues)**
+> **Please report any security vulnerabilities using the button above or click here: [Report a vulnerability](https://github.com/SemlerPDX/TaskMaster/security/advisories/new)**
 
-I am committed to keeping TaskMaster safe and secure. Updates to reported and confirmed security vulnerabilities will be swift, as able. Individual updates will be noticed in the respective issue report.
+I am committed to keeping TaskMaster safe and secure. Updates to reported and confirmed security vulnerabilities will be swift, as soon as able.
