@@ -405,7 +405,7 @@ public sealed class TaskKiller : ITaskKiller, IDisposable
         }
     }
 
-    private static IReadOnlyList<int> GetPids(object info)
+    private static List<int> GetPids(object info)
     {
         // The monitor snapshot values expose a Pids collection (used elsewhere);
         // Using reflection to avoid a hard dependency on its concrete type.

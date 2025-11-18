@@ -114,8 +114,7 @@ public sealed class CultureDialogViewModel : BaseViewModel
 
         // Pre-select current or default language
         var current = _features.Settings.Current?.UiCulture ?? DefaultCulture;
-        SelectedLanguage = Languages.FirstOrDefault(l => string.Equals(l.Culture, current, StringComparison.OrdinalIgnoreCase))
-                           ?? Languages.LastOrDefault();
+        SelectedLanguage = Languages.FirstOrDefault(l => string.Equals(l.Culture, current, StringComparison.OrdinalIgnoreCase));
 
         OkCommand = new RelayCommand(ApplyAndClose, CanApply);
     }

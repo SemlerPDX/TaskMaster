@@ -11,7 +11,7 @@
 	<AssemblyName>TaskMaster</AssemblyName>
 	<ApplicationIcon>assets\taskmaster.ico</ApplicationIcon>
 	<Copyright>Copyright (C) 2025 Aaron Semler</Copyright>
-	<PackageIcon>taskmaster.png</PackageIcon>
+	<PackageIcon>taskmaster-tile.png</PackageIcon>
 	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 	<RepositoryUrl>https://github.com/SemlerPDX/TaskMaster</RepositoryUrl>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -30,6 +30,9 @@
 	<IncludeSymbols>False</IncludeSymbols>
 	<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
 	<DocumentationFile>obj\Debug\net8.0-windows\TaskMaster.xml</DocumentationFile>
+	<PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+	<AnalysisLevel>latest-minimum</AnalysisLevel>
+	<EnableNETAnalyzers>True</EnableNETAnalyzers>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -178,6 +181,13 @@
     <Resource Include="Resources\Images\support\paypal.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="assets\taskmaster-tile.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

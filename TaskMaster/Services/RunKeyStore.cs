@@ -109,11 +109,8 @@ public sealed class RunKeyStore : IRunKeyStore
 
         var commandLine = BuildCommandLine(executablePath, arguments);
 
-        using var key = Registry.CurrentUser.CreateSubKey(RunKeyPath, writable: true);
-        if (key == null)
-        {
+        using var key = Registry.CurrentUser.CreateSubKey(RunKeyPath, writable: true) ??
             throw new InvalidOperationException("Unable to create HKCU Run key.");
-        }
 
         key.SetValue(name, commandLine, RegistryValueKind.String);
     }
@@ -167,7 +164,7 @@ public sealed class RunKeyStore : IRunKeyStore
             throw new InvalidOperationException("Cannot determine executable path.");
         }
 
-        if (!exe.StartsWith("\"", StringComparison.Ordinal))
+        if (!exe.StartsWith('"'))
         {
             exe = $"\"{exe}\"";
         }
