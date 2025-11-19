@@ -8,7 +8,7 @@
 
 WHAT IS TaskMaster?
 ------------------
-TaskMaster is a free Windows utility application to keep desired tasks running
+TaskMaster is a free utility application for Windows to keep desired tasks running
 and prevent unwanted tasks that cannot otherwise be disabled or uninstalled
 from running on your computer.
 
