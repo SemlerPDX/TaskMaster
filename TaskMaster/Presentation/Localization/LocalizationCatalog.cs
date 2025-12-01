@@ -56,6 +56,8 @@ public static class LocalizationCatalog
         new LangItem { Culture = "en-US", Display = "English (US)",     FlagPath = FlagsPath + "us" + FlagsFormat },
         // Spanish
         new LangItem { Culture = "es-ES", Display = "Español (España)", FlagPath = FlagsPath + "es" + FlagsFormat },
+        // Chinese (Simplified)
+        new LangItem { Culture = "zh-CN", Display = "中文（简体）", FlagPath = FlagsPath + "cn" + FlagsFormat },
         // -- Other languages commented out for future use--
         //// German
         //new LangItem { Culture = "de-DE", Display = "Deutsch (Deutschland)", FlagPath = FlagsPath + "de" + FlagsFormat },
@@ -77,8 +79,6 @@ public static class LocalizationCatalog
         //new LangItem { Culture = "el-GR", Display = "Ελληνικά (Ελλάδα)", FlagPath = FlagsPath + "gr" + FlagsFormat },
         //// Turkish
         //new LangItem { Culture = "tr-TR", Display = "Türkçe (Türkiye)", FlagPath = FlagsPath + "tr" + FlagsFormat },
-        //// Chinese (Simplified)
-        //new LangItem { Culture = "zh-CN", Display = "中文（简体）", FlagPath = FlagsPath + "cn" + FlagsFormat },
         //// Japanese
         //new LangItem { Culture = "ja-JP", Display = "日本語（日本）", FlagPath = FlagsPath + "jp" + FlagsFormat }
     ];
