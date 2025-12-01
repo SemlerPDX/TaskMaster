@@ -1,0 +1,433 @@
+﻿<!--
+ This file is part of TaskMaster.
+ Copyright (C) 2025 Aaron Semler
+
+ TaskMaster is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Localization Strings (en-US) -->
+    
+    <!-- - App-level - -->
+    <sys:String x:Key="Text.App.Title">TaskMaster</sys:String>
+    <sys:String x:Key="Text.App.Author">Aaron Semler</sys:String>
+    <sys:String x:Key="Text.App.Author.Avatar">SemlerPDX</sys:String>
+    <sys:String x:Key="Text.App.Author.Alias">(又名 SemlerPDX)</sys:String>
+    <sys:String x:Key="Text.App.CopyrightPrefix">版权所有 ©</sys:String>
+
+    <!-- App Startup Update Checks - Tray Notification Messages -->
+    <sys:String x:Key="Message.App.History.UpdateFound">已发现 TaskMaster 更新！v{0} 现已可用。请访问 GitHub 获取详情</sys:String>
+    <sys:String x:Key="Message.App.History.UpdateNotFound">启动时未发现更新。TaskMaster v{0} 为最新版本。</sys:String>
+    <sys:String x:Key="Message.App.History.UpdateError">检查更新时出现错误。若问题持续，请提交错误报告。</sys:String>
+
+    <!-- App Startup Update Checks - History Log Messages -->
+    <sys:String x:Key="Title.App.Tray.UpdateFound">发现更新!</sys:String>
+    <sys:String x:Key="Message.App.Tray.UpdateFound">TaskMaster {0} 版本现已发布。请访问 GitHub 获取详情。</sys:String>
+
+    <!-- Tabs -->
+    <sys:String x:Key="Text.Tab.Launcher">应用启动器</sys:String>
+    <sys:String x:Key="Text.Tab.Killer">程序自动结束</sys:String>
+    <sys:String x:Key="Text.Tab.Settings">设置</sys:String>
+
+
+
+    <!-- - Common - -->
+    <!-- Buttons -->
+    <sys:String x:Key="Text.Button.Add">添加</sys:String>
+    <sys:String x:Key="Text.Button.Edit">编辑</sys:String>
+    <sys:String x:Key="Text.Button.Browse">浏览</sys:String>
+    <sys:String x:Key="Text.Button.Remove">移除</sys:String>
+
+    <sys:String x:Key="Text.Button.Save">保存</sys:String>
+    <sys:String x:Key="Text.Button.Undo">撤销</sys:String>
+    <sys:String x:Key="Text.Button.Clear">清除</sys:String>
+    <sys:String x:Key="ToolTip.Button.Clear">清除历史记录</sys:String>
+    <sys:String x:Key="Text.Button.Cancel">取消</sys:String>
+    <sys:String x:Key="Text.Button.Close">关闭</sys:String>
+
+    <sys:String x:Key="Text.Button.OK">确定</sys:String>
+    <sys:String x:Key="Text.Button.Yes">是</sys:String>
+    <sys:String x:Key="Text.Button.No">否</sys:String>
+
+    <sys:String x:Key="ToolTip.Button.Close">关闭</sys:String>
+    <sys:String x:Key="ToolTip.Button.Minimize">最小化</sys:String>
+    <sys:String x:Key="ToolTip.Button.Help">TaskMaster 帮助与支持</sys:String>
+
+    <!-- Messages -->
+    <sys:String x:Key="Message.App.History.LinkFailed">无法从应用对话框打开链接。</sys:String>
+
+    <!-- Labels -->
+    <sys:String x:Key="Text.Unit.Seconds">秒(s)</sys:String>
+    <sys:String x:Key="Text.Unit.Attempts">次尝试(s)</sys:String>
+    <sys:String x:Key="Text.Unit.Entries">条目</sys:String>
+
+    <sys:String x:Key="Text.RunningProcesses">当前正在运行的进程</sys:String>
+    <sys:String x:Key="Title.BrowseFile">选择应用程序</sys:String>
+
+    <!-- Listbox Tooltips -->
+    <sys:String x:Key="ToolTip.App.ListBox.SavedTask">选择已保存的任务以移动、编辑或移除</sys:String>
+    <sys:String x:Key="ToolTip.App.ListBox.RunningProcess">选择任务并点击“添加”保存到左侧列表</sys:String>
+
+    <!-- - Jumplist - -->
+    <sys:String x:Key="JumpList.RelocateTask.Title">移动到主显示器</sys:String>
+    <sys:String x:Key="JumpList.RelocateTask.Description">恢复 TaskMaster 并将其置于主显示器中央。</sys:String>
+    <sys:String x:Key="JumpList.TaskSchedulerTask.Title">Windows 任务计划程序</sys:String>
+    <sys:String x:Key="JumpList.TaskSchedulerTask.Description">打开 Windows 任务计划程序。</sys:String>
+
+    
+    <!-- - Task Launcher Tab - -->
+    <!-- Messages -->
+    <sys:String x:Key="Title.LauncherTab.Dialog.Changed">应用启动器列表已更改</sys:String>
+    <sys:String x:Key="Message.LauncherTab.Dialog.Changed">您已更改应用启动器列表，但尚未保存更改。\n\n
+		\n现在要保存更改吗？
+    </sys:String>
+
+    <sys:String x:Key="Message.LauncherTab.History.Saved">已保存应用启动器列表。</sys:String>
+    <sys:String x:Key="Message.LauncherTab.History.Canceled">已取消应用启动器列表更改。</sys:String>
+    <sys:String x:Key="Message.LauncherTab.History.Unable">无法将 '{0}' 添加到应用启动器列表 — 条目已存在。</sys:String>
+    <sys:String x:Key="Message.LauncherTab.History.PathError">无法添加 '{0}' — 路径无法解析。请使用“浏览”手动定位并设置。</sys:String>
+
+    <!-- Task Launcher Feature Messages -->
+    <sys:String x:Key="Message.LauncherTab.History.Missing">未检测到 '{0}'。若仍未运行，将在 {1} 秒后启动。</sys:String>
+
+    <sys:String x:Key="Message.LauncherTab.History.Launched">已启动：{0}</sys:String>
+    <sys:String x:Key="Title.TaskLauncher.Tray.Launched">任务已启动</sys:String>
+    <sys:String x:Key="Message.TaskLauncher.Tray.Launched">应用启动器已启动 '{0}'</sys:String>
+
+    <sys:String x:Key="Message.LauncherTab.History.Failed"> 启动失败：{0}（第 {1} 次尝试）。</sys:String>
+    <sys:String x:Key="Title.TaskLauncher.Tray.Failed">启动失败</sys:String>
+    <sys:String x:Key="Message.TaskLauncher.Tray.Failed">应用启动器启动“{0}”失败（第 {1} 次尝试）</sys:String>
+
+    <sys:String x:Key="Message.LauncherTab.History.Disabled">由于 {0} 次失败，本会话内已禁用：{1}。</sys:String>
+    <sys:String x:Key="Title.TaskLauncher.Tray.Disabled">启动已禁用</sys:String>
+    <sys:String x:Key="Message.TaskLauncher.Tray.Disabled">应用启动器因 {1} 次启动失败，本会话内已禁用自动启动 '{0}'</sys:String>
+
+    <!-- Labels/TextBlocks -->
+    <sys:String x:Key="Text.LauncherTab.SavedItems">应用关闭或崩溃时重新启动</sys:String>
+    <sys:String x:Key="Text.LauncherTab.History">应用启动器历史记录</sys:String>
+
+
+
+    <!-- - Task Launcher Add/Edit Dialog - -->
+    <!-- Messages -->
+    <sys:String x:Key="Message.LauncherDialog.History.Saved">已保存应用启动器条目。</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.History.Canceled">已取消应用启动器条目更改。</sys:String>
+
+    <sys:String x:Key="Title.LauncherDialog.Dialog.Unable">进程已存在</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.Dialog.Unable">无法添加 '{0}'\n
+        \n该条目已存在于其他应用启动器或程序自动结束条目中。
+    </sys:String>
+
+    <sys:String x:Key="Title.LauncherDialog.Dialog.PathError">未找到路径</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.Dialog.PathError">无法添加 '{0}' - 路径无法解析。请使用“浏览”手动定位并设置。</sys:String>
+
+    <sys:String x:Key="Title.LauncherDialog.Dialog.UnsavedDuplicate">未保存的重复条目</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.Dialog.UnsavedDuplicate">'{0}' 已存在于辅助应用列表中，无法重复添加。</sys:String>
+    <sys:String x:Key="Message.LauncherDialog.Dialog.UnsavedDuplicate.TargetApp">'{0}' 已设为目标应用但未保存，无法重复添加。</sys:String>
+
+    <!-- Labels/TextBlocks -->
+    <sys:String x:Key="Text.LauncherDialog.CheckBox.Enabled">目标应用启动器</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.CheckBox.Enabled">启用目标应用关闭或崩溃时自动启动。</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.CheckBox.Detector">目标应用监测器</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.CheckBox.Detector"> 启用目标应用监测。仅在检测到目标应用运行时启动辅助应用。</sys:String>
+
+    <sys:String x:Key="Text.LauncherDialog.CheckBox.EnabledAux">辅助应用启动器</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.CheckBox.EnabledAux">启用/禁用在目标应用启动或检测运行时启动辅助应用。</sys:String>
+
+    <sys:String x:Key="Text.LauncherDialog.Target.Name">目标应用名称</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.Target.Path">目标应用路径</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.Target.Args">目标应用启动参数（可选）</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.Target.Args"> 目标应用可接受的参数，或用于替代上方路径启动的任务。示例：-schtasks "MyTaskName"</sys:String>
+
+    <sys:String x:Key="Text.LauncherDialog.Aux.SavedItems">当目标应用启动或检测到运行时启动辅助应用</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.Aux.Path">已选辅助应用路径</sys:String>
+    <sys:String x:Key="Text.LauncherDialog.Aux.Args">辅助应用启动参数（可选）</sys:String>
+    <sys:String x:Key="ToolTip.LauncherDialog.Aux.Args">辅助应用可接受的参数，或用于替代上方路径启动的任务。示例：-schtasks "MyTaskName"</sys:String>
+
+
+
+    <!-- - Task Killer Tab - -->
+    <!-- Messages -->
+    <sys:String x:Key="Title.KillerTab.Dialog.Changed">程序自动结束列表已更改</sys:String>
+    <sys:String x:Key="Message.KillerTab.Dialog.Changed">您已更改程序自动结束列表，但尚未保存更改。\n\n
+        \n现在要保存更改吗？
+    </sys:String>
+
+    <sys:String x:Key="Message.KillerTab.History.Saved">已保存程序自动结束列表。</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.Canceled">已取消程序自动结束列表更改。</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.Unable">无法将 '{0}' 添加到程序自动结束列表 — 条目已存在。</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.UnsavedDuplicate">'{0}' 已存在于程序自动结束列表。请保存后生效。</sys:String>
+
+    <!-- Task Killer Feature Messages -->
+    <sys:String x:Key="Message.KillerTab.History.Detected">检测到 '{0}'。若仍在运行，将在 {1} 秒后结束。</sys:String>
+
+    <sys:String x:Key="Message.KillerTab.History.Killed">已结束 '{0}' {1} 个实例{2}）。</sys:String>
+    <sys:String x:Key="Title.TaskKiller.Tray.Killed">已结束任务</sys:String>
+    <sys:String x:Key="Message.TaskKiller.Tray.Killed">程序自动结束已终止 '{0}'</sys:String>
+
+    <sys:String x:Key="Message.KillerTab.History.Denied">终止进程 '{0}' 被拒绝访问</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.AsAdmin">请在设置选项卡启用“以管理员身份运行”或将此进程排除。</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.Failed">无法终止进程 '{0}'</sys:String>
+    <sys:String x:Key="Message.KillerTab.History.FailedNote">此进程可能已退出。详情请查看 TaskMaster 日志文件。</sys:String>
+
+    <sys:String x:Key="Message.KillerTab.History.Disabled">因 {0} 次失败，本会话内已禁用：{1}。</sys:String>
+    <sys:String x:Key="Title.TaskKiller.Tray.Disabled">程序自动结束已禁用</sys:String>
+    <sys:String x:Key="Message.TaskKiller.Tray.Disabled">程序自动结束因 {1} 次终止失败，本会话内已禁用自动结束 '{0}'</sys:String>
+
+    <!-- Labels/TextBlocks -->
+    <sys:String x:Key="Text.KillerTab.SavedItems">运行时自动结束应用</sys:String>
+    <sys:String x:Key="Text.KillerTab.History">运行时自动结束应用</sys:String>
+
+
+
+    <!-- - Settings Tab - -->
+    <!-- Messages -->
+    <sys:String x:Key="Title.SettingsTab.Dialog.Changed">设置已更改</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.Changed">您已更改设置但尚未保存。\n\n
+        \n现在要保存这些设置吗？
+    </sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.Restore">恢复默认设置</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.Restore">这将把所有设置恢复为默认值，但所有已保存的启动器和结束器应用不会被删除。\n
+        \n确定要恢复默认设置吗？
+    </sys:String>
+    <sys:String x:Key="Message.SettingsTab.History.Restored">默认设置已恢复。</sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.Uninstall">卸载应用程序</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.Uninstall">这将删除所有已保存的启动器和结束器应用（包括保存文件夹），并移除所有应用设置。\n
+        \n 完成后，TaskMaster 将关闭，您可以重新打开以全新开始，或手动删除应用程序文件夹以彻底卸载 TaskMaster 及其所有文件。\n
+        \n确定要卸载 TaskMaster 吗？
+    </sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.Uninstalled">TaskMaster 卸载完成</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.Uninstalled">TaskMaster 将立即关闭。您可以删除包含此应用的文件夹以完成卸载，或重新启动 TaskMaster 以恢复默认设置。\n
+        \nTaskMaster 应用文件夹：
+        \n{0}
+    </sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.RestartRequired">需要重启</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.EnabledRestart">“以管理员身份运行”设置已启用并保存。\n
+        \nTaskMaster 需要重新启动以应用此更改。
+    </sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.DisabledRestart">“以管理员身份运行”设置已禁用并保存。\n
+        \nTaskMaster 需要重新启动以应用此更改。
+    </sys:String>
+
+    <sys:String x:Key="Message.SettingsTab.History.Saved">设置已保存。</sys:String>
+    <sys:String x:Key="Message.SettingsTab.History.Canceled">设置更改已取消。</sys:String>
+
+    <sys:String x:Key="Message.SettingsTab.History.RunAsAdmin">TaskMaster 正在以管理员权限运行</sys:String>
+
+    <!-- Update Check Dialog Titles and Messages -->
+    <sys:String x:Key="Title.SettingsTab.Dialog.UpdateFound">可用更新</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.UpdateFound">有新版本（{0}）可用。\n
+        \n 最新更改
+        \n{1}\n
+        \n 最新更改：
+    </sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.UpdateNotFound">无可用更新</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.UpdateNotFound">您正在运行最新版本（{0}）。</sys:String>
+
+    <sys:String x:Key="Title.SettingsTab.Dialog.UpdateError">更新错误</sys:String>
+    <sys:String x:Key="Message.SettingsTab.Dialog.UpdateError"> 检查更新时出现错误。请稍后重试。若问题持续，请在 TaskMaster 的 GitHub 页面报告错误。</sys:String>
+
+    <!-- Buttons -->
+    <sys:String x:Key="Text.Button.Save.Settings">保存设置</sys:String>
+    <sys:String x:Key="Text.Button.Cancel.Changes">取消更改</sys:String>
+    <sys:String x:Key="Text.Button.Restore.Settings">恢复默认设置</sys:String>
+
+    <sys:String x:Key="Text.Button.CheckUpdates">检查更新</sys:String>
+    <sys:String x:Key="Text.Button.About">关于 TaskMaster</sys:String>
+    <sys:String x:Key="Text.Button.Freeware">免费软件</sys:String>
+    <sys:String x:Key="Text.Button.License">许可证</sys:String>
+    <sys:String x:Key="Text.Button.Uninstall">卸载</sys:String>
+
+    <!-- ComboBoxes -->
+    <sys:String x:Key="Text.ComboBox.UiScale">界面缩放</sys:String>
+    <sys:String x:Key="Text.ComboBox.Theme">主题</sys:String>
+    <sys:String x:Key="Text.ComboBox.Theme.Dark">深色</sys:String>
+    <sys:String x:Key="Text.ComboBox.Theme.Light">浅色</sys:String>
+    <sys:String x:Key="Text.ComboBox.Theme.Auto">自动</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style">样式</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style.Edge">边框</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style.Subtle">轻盈</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style.Rounded">圆角</sys:String>
+    <sys:String x:Key="Text.ComboBox.Style.Pill">胶囊</sys:String>
+
+    <!-- CheckBoxes -->
+    <sys:String x:Key="Text.CheckBox.UpdatesCheck">启动时检查更新</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.UpdatesCheck">启用或禁用启动时通过 TaskMaster GitHub 自动检查更新</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.WindowsStartup">Windows 启动时运行</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.WindowsStartup">启用或禁用随 Windows 启动 TaskMaster</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.StartMinimized">启动时最小化</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.StartMinimized"> 启用或禁用以系统托盘最小化方式启动 TaskMaster</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.TrayMinimize">最小化到系统托盘</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.TrayMinimize">启用或禁用将 TaskMaster 最小化到系统托盘而非任务栏</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.CloseMinimizes">关闭按钮执行最小化</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.CloseMinimizes">启用或禁用点击关闭按钮时最小化 TaskMaster</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.TrayNotifications">显示系统托盘通知</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.TrayNotifications">启用或禁用在系统托盘中显示通知</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.RecallWindowPos">记住窗口位置</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.RecallWindowPos">启用或禁用在关闭时记住 TaskMaster 的窗口位置</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.RunAsAdmin">以管理员身份运行</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.RunAsAdmin">启用后尝试使用高权限运行 TaskMaster。此设置不影响应用启动器启动的进程，仅影响程序自动结束功能。</sys:String>
+
+    <sys:String x:Key="Text.CheckBox.AlwaysOnTop">窗口置顶</sys:String>
+    <sys:String x:Key="ToolTip.CheckBox.AlwaysOnTop">启用或禁用让 TaskMaster 始终置于其他窗口之上</sys:String>
+
+    <!-- Numbers Input -->
+    <sys:String x:Key="Text.LauncherDelay">重新启动关闭应用前的等待时间</sys:String>
+    <sys:String x:Key="Text.MaxRetry">启动失败的最大重试次数</sys:String>
+    <sys:String x:Key="Text.MaxRetry.Killer">结束失败的最大重试次数</sys:String>
+    <sys:String x:Key="Text.KillerDelay">检测到应用后执行结束前的等待时间</sys:String>
+    <sys:String x:Key="Text.MaxHistory">启动/结束历史记录最大条目数</sys:String>
+
+
+
+    <!-- ====================== START of App CULTURE Dialog Section ====================== -->
+    <sys:String x:Key="Text.CultureDialog.Title">选择语言</sys:String>
+    <!-- - First Use Messages - -->
+    <sys:String x:Key="Message.CultureDialog.History.Welcome">欢迎使用 TaskMaster！初始设置已应用。</sys:String>
+    <sys:String x:Key="Message.CultureDialog.History.ReviewSettings">请检查设置并点击“保存”以永久应用。</sys:String>
+    <sys:String x:Key="Message.CultureDialog.History.RestoreDefaults">您也可以点击“恢复默认设置”将所有设置重置为默认值。</sys:String>
+    <sys:String x:Key="Message.CultureDialog.History.Uninstall">若需全新开始，请点击“卸载”删除所有设置与保存的应用。</sys:String>
+    <sys:String x:Key="Message.CultureDialog.History.Help">点击“帮助”查看文档与支持链接。祝使用愉快！-SemlerPDX</sys:String>
+
+
+
+    <!-- ====================== START of App ABOUT Dialog Section ====================== -->
+    <!-- App About Content -->
+    <sys:String x:Key="Text.AboutDialog.Title">关于 TaskMaster</sys:String>
+    <sys:String x:Key="Text.AboutDialog.Subtitle">我为所有人制作了这个工具，希望它对你有所帮助。-SemlerPDX</sys:String>
+
+    <sys:String x:Key="Content.AboutDialog.AppInfo.Version">版本:</sys:String>
+
+    <sys:String x:Key="Content.AboutDialog.AppInfo.Author">作者:</sys:String>
+
+    <sys:String x:Key="Content.AboutDialog.AppInfo.Contact">联系方式:</sys:String>
+    <sys:String x:Key="Text.AboutDialog.AppInfo.Contact">github.com/SemlerPDX/TaskMaster</sys:String>
+    <sys:String x:Key="Uri.AboutDialog.AppInfo.Contact">https://github.com/SemlerPDX/TaskMaster</sys:String>
+    <sys:String x:Key="ToolTip.AboutDialog.AppInfo.Contact">https://github.com/SemlerPDX/TaskMaster</sys:String>
+
+    <sys:String x:Key="Content.AboutDialog.AppInfo.License">许可证:</sys:String>
+    <sys:String x:Key="Text.AboutDialog.AppInfo.License">GNU General Public License v3</sys:String>
+    <sys:String x:Key="Uri.AboutDialog.AppInfo.License">https://www.gnu.org/licenses/licenses.en.html</sys:String>
+    <sys:String x:Key="ToolTip.AboutDialog.AppInfo.License">https://www.gnu.org/licenses/licenses.en.html</sys:String>
+
+
+    <!-- ====================== START of App HELP Dialog Section ====================== -->
+    <sys:String x:Key="Text.HelpDialog.Title">TaskMaster 帮助</sys:String>
+
+    <!-- == App Help - Content Section == -->
+    <!-- Restore Settings Help Strings -->
+    <sys:String x:Key="Text.HelpDialog.Restore.Header">恢复</sys:String>
+    <sys:String x:Key="Text.HelpDialog.Restore.Body">
+        如果 TaskMaster 工作异常，请在设置选项卡按下“恢复默认设置”并重新启动 TaskMaster。这不会删除已保存的启动或结束任务，只会恢复设置。
+    </sys:String>
+
+    <!-- Uninstall Application Help Strings -->
+    <sys:String x:Key="Text.HelpDialog.Uninstall.Header">卸载</sys:String>
+    <sys:String x:Key="Text.HelpDialog.Uninstall.Body">
+        如果 TaskMaster 仍有问题，请在设置选项卡点击“卸载”。这将删除所有已保存的启动/结束任务与设置。重新启动 TaskMaster 将恢复默认值。
+    </sys:String>
+
+    <!-- Permission Levels Help Strings -->
+    <sys:String x:Key="Text.HelpDialog.Permissions.Header">权限问题</sys:String>
+    <sys:String x:Key="Text.HelpDialog.Permissions.Body">
+        在 Windows 中启动和停止进程可能受权限限制。
+        若未以管理员身份运行，TaskMaster 无法结束高权限进程。
+        即使以管理员运行，TaskMaster 也不会启动高权限进程。
+    </sys:String>
+
+
+    <!-- == App Help - Additional Help Links Section == -->
+    <sys:String x:Key="Text.HelpDialog.HelpLinks.Header">其他帮助链接</sys:String>
+
+    <!-- Documentation Link Strings -->
+    <sys:String x:Key="Content.HelpDialog.HelpLinks.Documentation">完整文档:</sys:String>
+    <sys:String x:Key="Text.HelpDialog.HelpLinks.Documentation">TaskMaster Wiki</sys:String>
+    <sys:String x:Key="Uri.HelpDialog.HelpLinks.Documentation">https://github.com/SemlerPDX/TaskMaster/wiki</sys:String>
+    <sys:String x:Key="ToolTip.HelpDialog.HelpLinks.Documentation">https://github.com/SemlerPDX/TaskMaster/wiki</sys:String>
+
+    <!-- Issues Link Strings -->
+    <sys:String x:Key="Content.HelpDialog.HelpLinks.BugReports">发现错误或问题?</sys:String>
+    <sys:String x:Key="Text.HelpDialog.HelpLinks.BugReports">错误报告</sys:String>
+    <sys:String x:Key="Uri.HelpDialog.HelpLinks.BugReports">https://github.com/SemlerPDX/TaskMaster/issues</sys:String>
+    <sys:String x:Key="ToolTip.HelpDialog.HelpLinks.BugReports">https://github.com/SemlerPDX/TaskMaster/issues</sys:String>
+
+    <!-- Discussions Link Strings -->
+    <sys:String x:Key="Content.HelpDialog.HelpLinks.Discussions">提问或获取帮助:</sys:String>
+    <sys:String x:Key="Text.HelpDialog.HelpLinks.Discussions">讨论区</sys:String>
+    <sys:String x:Key="Uri.HelpDialog.HelpLinks.Discussions">https://github.com/SemlerPDX/TaskMaster/discussions</sys:String>
+    <sys:String x:Key="ToolTip.HelpDialog.HelpLinks.Discussions">https://github.com/SemlerPDX/TaskMaster/discussions</sys:String>
+
+
+
+    <!-- ====================== START of App ABOUT Dialog Section ====================== -->
+    <!-- App License Content -->
+    <sys:String x:Key="Text.LicenseDialog.Title">TaskMaster 许可证</sys:String>
+    <sys:String x:Key="Text.LicenseDialog.Subtitle">TaskMaster 是一款用于自动启动或停止 Windows 进程的实用工具应用</sys:String>
+
+
+
+    <!-- ====================== START of App SUPPORT Dialog Section ====================== -->
+    <!-- App Support Content -->
+    <sys:String x:Key="Text.SupportDialog.Title">TaskMaster 是免费软件</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Subtitle">TaskMaster 是 SemlerPDX 为 Windows 开发的开源免费工具</sys:String>
+
+    <sys:String x:Key="Text.SupportDialog.Freeware.Header">SemlerPDX 推荐并使用的其他免费软件:</sys:String>
+
+    <sys:String x:Key="Content.SupportDialog.PowerToys">Microsoft Power Toys:</sys:String>
+    <sys:String x:Key="Text.SupportDialog.PowerToys">learn.microsoft.com/.../powertoys</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.PowerToys">https://learn.microsoft.com/en-us/windows/powertoys/</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.PowerToys">https://learn.microsoft.com/en-us/windows/powertoys/</sys:String>
+    <sys:String x:Key="Text.SupportDialog.PowerToys.Description">Windows PowerToys 提供一套对所有 Windows 用户都很实用的工具。</sys:String>
+
+    <sys:String x:Key="Content.SupportDialog.Everything">Everything by VoidTools:</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Everything">voidtools.com</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.Everything">https://www.voidtools.com/</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.Everything">https://www.voidtools.com/</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Everything.Description">VoidTools 的 Everything 是一款强大且高速的搜索工具，比 Windows 搜索快得多。</sys:String>
+
+    <sys:String x:Key="Content.SupportDialog.Sms">Server Monitor System:</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Sms">github.com/SemlerPDX/ServerMonitorSystem</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.Sms">https://github.com/SemlerPDX/ServerMonitorSystem</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.Sms">https://github.com/SemlerPDX/ServerMonitorSystem</sys:String>
+    <sys:String x:Key="Text.SupportDialog.Sms.Description">SMS 是 SemlerPDX 开发的另一款实用工具，用于远程 Windows 服务器进程提醒等功能。</sys:String>
+
+
+    <!-- Author Support Link Buttons -->
+    <sys:String x:Key="Text.SupportDialog.LinkButtons.Header">您的支持非常重要并令人鼓舞！</sys:String>
+    <sys:String x:Key="Text.SupportDialog.LinkButtons.Body">TaskMaster 是数百小时开发与测试以及无数杯咖啡的成果。欢迎反馈、贡献与支持！</sys:String>
+    <sys:String x:Key="Text.SupportDialog.LinkButtons.ThankYou">感谢使用 TaskMaster！</sys:String>
+
+    <sys:String x:Key="Uri.SupportDialog.LinkButtons.Patreon">https://www.patreon.com/SemlerPDX</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.LinkButtons.Patreon">patreon.com/SemlerPDX</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.LinkButtons.Coffee">https://buymeacoffee.com/SemlerPDX</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.LinkButtons.Coffee">buymeacoffee.com/SemlerPDX</sys:String>
+    <sys:String x:Key="Uri.SupportDialog.LinkButtons.PayPal">https://veterans-gaming.com/semlerpdx/donate/</sys:String>
+    <sys:String x:Key="ToolTip.SupportDialog.LinkButtons.PayPal">veterans-gaming.com/semlerpdx/donate</sys:String>
+
+</ResourceDictionary>
